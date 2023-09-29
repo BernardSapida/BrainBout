@@ -38,10 +38,9 @@ const Form: FunctionComponent<FormProps> = () => {
 
     return (
         <div className={styles.container}>
-            <Input size='sm' type="Nickname" label="Nickname" />
             <Select
-                label="Select subject"
-                placeholder="Select an animal"
+                label="Subject"
+                placeholder="Select a subject"
                 // className={styles.select}
                 name='subject'
                 size='sm'

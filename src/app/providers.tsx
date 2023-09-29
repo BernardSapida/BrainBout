@@ -3,19 +3,22 @@
 import { FunctionComponent, ReactNode } from 'react';
 import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider } from 'next-themes';
+import Providers from '@/components/Providers';
 
-interface ProvidersProps {
+interface AppProvidersProps {
     children: ReactNode
 }
 
-const Providers: FunctionComponent<ProvidersProps> = ({ children }) => {
+const AppProviders: FunctionComponent<AppProvidersProps> = ({ children }) => {
     return (
-        <ThemeProvider attribute="class">
-            <NextUIProvider>
-                {children}
-            </NextUIProvider>
-        </ThemeProvider>
+        <Providers>
+            <ThemeProvider attribute="class">
+                <NextUIProvider>
+                    {children}
+                </NextUIProvider>
+            </ThemeProvider>
+        </Providers>
     );
 }
 
-export default Providers;
+export default AppProviders;

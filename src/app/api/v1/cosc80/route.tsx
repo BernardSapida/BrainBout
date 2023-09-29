@@ -9,7 +9,7 @@ export async function GET() {
 
 const getQuestions = async (): Promise<any> => {
     const client = await clientPromise;
-    const db = client.db('reviewer');
+    const db = client.db('brainbout');
 
     const response = await db.collection('COSC 80B').findOne();
 
