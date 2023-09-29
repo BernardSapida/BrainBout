@@ -1,4 +1,4 @@
-export default {
+const styles = {
     main: [
         'my-10',
         'mx-auto',
@@ -10,3 +10,5 @@ export default {
         // Small Screen Styles
     ].join(' ')
 }
+
+export default styles;

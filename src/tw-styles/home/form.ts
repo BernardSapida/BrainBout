@@ -1,4 +1,4 @@
-export default {
+const styles = {
     container: [
         'mx-auto',
         'flex',
@@ -18,3 +18,5 @@ export default {
         'text-white',
     ].join(' '),
 }
+
+export default styles;
