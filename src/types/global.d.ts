@@ -2,7 +2,7 @@ type Subjects = Subject[]
 
 type Subject = {
     name: string;
-    subjectCode: string;
+    subjectCode: SubjectCodes;
 }
 
 type Menus = Menu[]

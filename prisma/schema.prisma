@@ -15,9 +15,17 @@ datasource db {
 }
 
 model User {
-  id String @id @map("_id")  // Matches kinde user id
-  given_name String?
-  family_name String?
-  email String @unique
-  picture String?
+  id              String      @id @map("_id")  // Matches kinde user id
+  given_name      String?
+  family_name     String?
+  email           String      @unique
+  picture         String?
+  Cosc80          Cosc80B?
+}
+
+model Cosc80B {
+  id              String      @id @default(auto()) @map("_id") @db.ObjectId
+  score           Int
+  User            User?       @relation(fields: [userId], references: [id])
+  userId          String?     @unique
 }

@@ -1,5 +1,5 @@
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
-import { publicProcedure, router } from './trpc';
+import { publicProcedure, privateProcedure, router } from './trpc';
 import { TRPCError } from '@trpc/server';
 import { db } from '@/db';
 
@@ -21,8 +21,6 @@ export const appRouter = router({
             }
         });
 
-        console.log(dbUser);
-
         if (!dbUser) {
             // Create user in db
             await db.user.create({
@@ -37,7 +35,7 @@ export const appRouter = router({
         }
 
         return { success: true }
-    })
+    }),
 });
 
 // Export type router type signature,
