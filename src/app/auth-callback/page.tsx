@@ -27,7 +27,7 @@ const Page: FunctionComponent<PageProps> = () => {
         if (failureReason?.message === 'UNAUTHORIZED') {
             router.push('/');
         }
-    }, [failureReason])
+    }, [failureReason, router])
 
     return (
         <div className='w-full mt-24 flex justify-center'>

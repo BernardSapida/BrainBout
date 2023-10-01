@@ -23,44 +23,6 @@ const Page: FunctionComponent<PageProps> = () => {
     const searchParams = useSearchParams();
     const subject = searchParams.get('subject');
 
-    useEffect(() => {
-        if (subject) {
-            getExam(subject).then((exam) => {
-                const examQuestions = exam.data.questions;
-
-                setQuestions(examQuestions);
-                setTime(examQuestions.length * 10);
-                setExamTimeout(false);
-                setAnswers(() => {
-                    let defaultAnswers = [];
-                    for (let i = 0; i < examQuestions.length; i++) {
-                        defaultAnswers.push({ answer: '' })
-                    }
-                    return defaultAnswers;
-                });
-            })
-        }
-
-        console.log()
-    }, []);
-
-    useEffect(() => {
-        let timer: NodeJS.Timeout | null = null;
-
-        if (!examTimeout) {
-            timer = setInterval(() => setTime((prevTime: number) => prevTime - 1), 1000);
-
-            if (time == 0) {
-                clearInterval(timer!)
-                handleSubmit();
-            }
-        } else {
-            clearInterval(timer!);
-        }
-
-        return () => clearInterval(timer!);
-    }, [time, examTimeout]);
-
     const handleSubmit = async () => {
         if (!examTimeout) setExamTimeout(true);
 
@@ -116,6 +78,42 @@ const Page: FunctionComponent<PageProps> = () => {
     const passedExam = () => {
         return (score.current / overallScore.current * 100) > 70;
     }
+
+    useEffect(() => {
+        if (subject) {
+            getExam(subject).then((exam) => {
+                const examQuestions = exam.data.questions;
+
+                setQuestions(examQuestions);
+                setTime(examQuestions.length * 10);
+                setExamTimeout(false);
+                setAnswers(() => {
+                    let defaultAnswers = [];
+                    for (let i = 0; i < examQuestions.length; i++) {
+                        defaultAnswers.push({ answer: '' })
+                    }
+                    return defaultAnswers;
+                });
+            })
+        }
+    }, [subject]);
+
+    useEffect(() => {
+        let timer: NodeJS.Timeout | null = null;
+
+        if (!examTimeout) {
+            timer = setInterval(() => setTime((prevTime: number) => prevTime - 1), 1000);
+
+            if (time == 0) {
+                clearInterval(timer!)
+                handleSubmit();
+            }
+        } else {
+            clearInterval(timer!);
+        }
+
+        return () => clearInterval(timer!);
+    }, [time, examTimeout, handleSubmit]);
 
     if (questions.length === 0 || answers.length === 0) {
         return (
