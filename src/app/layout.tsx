@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import AppProviders from './providers'
 import Nav from '@/components/general/Nav'
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
+import { Analytics } from '@vercel/analytics/react';
 
 import KindeAuth from '@/components/general/KindeAuth'
 import Logout from '@/components/general/Logout'
@@ -47,6 +48,7 @@ export default async function RootLayout({
             user={user}
           />
           {children}
+          <Analytics />
         </AppProviders>
       </body>
     </html>
