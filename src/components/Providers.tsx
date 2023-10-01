@@ -3,6 +3,7 @@ import { FunctionComponent, ReactNode, useState } from 'react';
 import { trpc } from '@/app/_trpc/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { httpBatchLink } from '@trpc/client';
+import { absoluteUrl } from '@/lib/utils';
 
 interface ProvidersProps {
     children: ReactNode
@@ -13,7 +14,7 @@ const Providers: FunctionComponent<ProvidersProps> = ({ children }) => {
     const [trpcClient] = useState(() => trpc.createClient({
         links: [
             httpBatchLink({
-                url: `http://localhost:3000/api/trpc`,
+                url: absoluteUrl("/api/trpc"),
             }),
         ],
     }));

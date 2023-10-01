@@ -9,6 +9,15 @@ export async function getLeaderboard(subject: string) {
     return res.json();
 }
 
+export async function getExam(subject: string) {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/v1/${subject}/exam`, {
+        cache: 'no-store',
+        method: 'GET',
+    })
+
+    return res.json();
+}
+
 export async function updateExamScore(subject: string, score: number) {
     const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/v1/${subject}`, {
         method: 'PUT',

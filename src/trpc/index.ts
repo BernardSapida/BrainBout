@@ -10,12 +10,13 @@ export const appRouter = router({
         const { getUser } = getKindeServerSession();
         const user = getUser();
 
-        if (!user.id || !user.email) {
+        if (!user || !user.id || !user.email) {
             throw new TRPCError({ code: 'UNAUTHORIZED' });
+            return { success: false }
         }
 
         // Check if the user is in the database
-        const dbUser = await db.user.findUnique({
+        const dbUser = await db.users.findUnique({
             where: {
                 id: user.id
             }
@@ -23,7 +24,7 @@ export const appRouter = router({
 
         if (!dbUser) {
             // Create user in db
-            await db.user.create({
+            await db.users.create({
                 data: {
                     id: user.id,
                     given_name: user.given_name,

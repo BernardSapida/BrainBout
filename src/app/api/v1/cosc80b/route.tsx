@@ -4,7 +4,10 @@ import { db } from '@/db'
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
 
 export async function GET() {
-    const data = await db.cosc80B.findMany({
+    const data = await db.leaderboards.findMany({
+        where: {
+            subject: 'cosc 80b'
+        },
         include: { User: true },
         orderBy: {
             score: 'desc'
@@ -21,10 +24,16 @@ export async function PUT(request: Request) {
 
     if (!user) return NextResponse.json({ success: false });
 
-    await db.cosc80B.upsert({
+    await db.leaderboards.upsert({
         where: { userId: user.id! },
-        update: { score: body.score },
-        create: { score: body.score },
+        update: {
+            score: body.score
+        },
+        create: {
+            userId: user.id,
+            subject: 'cosc 80b',
+            score: body.score
+        },
     })
 
     return NextResponse.json({ success: true });

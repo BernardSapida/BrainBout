@@ -22,6 +22,7 @@ const Identification: FunctionComponent<IdentificationProps> =
                         onValueChange={
                             (value) =>
                                 setAnswers(prevAnswers => prevAnswers.map((answer, index) => {
+                                    console.log(index === questionNumber - 1)
                                     if (index === questionNumber - 1) answer.answer = value;
                                     return answer;
                                 }))

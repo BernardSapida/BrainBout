@@ -16,7 +16,7 @@ const Page: FunctionComponent<PageProps> = async () => {
 
   if (!user || !user.id) redirect('/auth-callback?origin=dashboard');
 
-  const dbUser = await db.user.findFirst({
+  const dbUser = await db.users.findFirst({
     where: {
       id: user.id
     }
