@@ -105,7 +105,7 @@ const Nav: FunctionComponent<NavProps> =
                                     <DropdownMenu aria-label="Profile Actions" variant="flat">
                                         <DropdownItem key="profile" className="h-14 gap-2" textValue='Avatar'>
                                             <p className="font-semibold text-tiny">Signed in as</p>
-                                            <p className="font-semibold text-tiny">{user?.given_name} {user?.family_name}</p>
+                                            <p className="font-semibold text-tiny">{user?.given_name} {user?.family_name || ''}</p>
                                         </DropdownItem>
                                         <DropdownItem key="logout" color="danger" textValue='Logout'>
                                             {Logout}
