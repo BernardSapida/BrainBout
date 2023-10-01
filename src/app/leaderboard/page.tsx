@@ -60,10 +60,10 @@ const Page: FunctionComponent<PageProps> = () => {
                     </TableCell>
                     <TableCell>
                       <User
-                        name={`${user.User?.given_name} ${user.User.family_name || ''}`}
-                        description={user.User.email}
+                        name={`${user.User?.given_name} ${user.User?.family_name || ''}`}
+                        description={user.User?.email}
                         avatarProps={{
-                          src: `${user.User.picture || 'https://res.cloudinary.com/dwwdihklx/image/upload/v1695957223/display-pictures/t77vrr2xn7pdz5vukzjk.jpg'}`
+                          src: `${user.User?.picture || 'https://res.cloudinary.com/dwwdihklx/image/upload/v1695957223/display-pictures/t77vrr2xn7pdz5vukzjk.jpg'}`
                         }}
                       />
                     </TableCell>

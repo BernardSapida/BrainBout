@@ -12,7 +12,18 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'BrainBout',
-  description: 'BrainBout created by Bernard Sapida',
+  description: 'BrainBout is your trusted study companion designed to help you excel in all your subjects. Whether you are gearing up for a challenging math exam, a history quiz, or any other subject, we have got you covered.',
+  openGraph: {
+    type: "website",
+    url: "https://brainbout.vercel.app",
+    title: "BrainBout",
+    description: "BrainBout is your trusted study companion designed to help you excel in all your subjects. Whether you are gearing up for a challenging math exam, a history quiz, or any other subject, we have got you covered.",
+    siteName: "BrainBout",
+    images: [{
+      url: "./assets/image/brainbout.png",
+    }],
+  },
+  metadataBase: new URL("https://brainbout.vercel.app")
 }
 
 export default async function RootLayout({
@@ -26,6 +37,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className='text-foreground bg-background dark'>
+      <link rel="icon" href="/brainbout.ico" sizes="any" />
       <body className={inter.className}>
         <AppProviders>
           <Nav

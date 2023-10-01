@@ -61,12 +61,12 @@ const Nav: FunctionComponent<NavProps> =
                     ],
                 }}
             >
-                <Link href='/'>
-                    <NavbarBrand>
-                        <FaBrain className='inline mr-2' />
-                        <p className="hidden sm:block font-bold text-inherit">BrainBout</p>
-                    </NavbarBrand>
-                </Link>
+                <NavbarBrand>
+                    <Link href='/'>
+                        <FaBrain className='inline mb-1 mr-2' />
+                        <p className="hidden sm:inline font-bold text-inherit">BrainBout</p>
+                    </Link>
+                </NavbarBrand>
 
                 {
                     isAuthenticated && (
