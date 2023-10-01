@@ -36,7 +36,7 @@ const Page: FunctionComponent<PageProps> = () => {
                 let enumerationAnswers = questionAnswers!;
 
                 answer.split(', ').forEach((answer: string) => {
-                    if (enumerationAnswers[answer]) {
+                    if (enumerationAnswers[answer.toLowerCase()]) {
                         delete enumerationAnswers[answer];
                         score.current++;
                     }
@@ -47,7 +47,7 @@ const Page: FunctionComponent<PageProps> = () => {
                 continue;
             }
 
-            if (questionAnswer == answer) score.current++;
+            if (questionAnswer == answer.toLowerCase()) score.current++;
             overallScore.current++;
         }
     }
