@@ -1,13 +1,13 @@
 'use client';
 
 import Wrapper from '@/components/Wrapper';
-import { progressBarColor, secondsToMinutesAndSeconds, timeProgress } from '@/lib/utils';
-import { FunctionComponent, useCallback, useEffect, useRef, useState } from 'react';
-import { Divider, Progress, Button, Chip, Spinner } from "@nextui-org/react";
-import MultipleChoice from '@/components/exam/MultipleChoice';
 import Identification from '@/components/exam/Identification';
-import { useRouter, useSearchParams } from 'next/navigation';
+import MultipleChoice from '@/components/exam/MultipleChoice';
 import { getExam, updateExamScore } from '@/lib/data';
+import { progressBarColor, secondsToMinutesAndSeconds, timeProgress } from '@/lib/utils';
+import { Button, Chip, Divider, Progress, Spinner } from "@nextui-org/react";
+import { useRouter, useSearchParams } from 'next/navigation';
+import { FunctionComponent, useEffect, useRef, useState } from 'react';
 
 interface PageProps { }
 
@@ -82,7 +82,7 @@ const Page: FunctionComponent<PageProps> = () => {
     useEffect(() => {
         if (subject) {
             getExam(subject).then((exam) => {
-                const examQuestions = exam.data.questions;
+                const examQuestions = exam.data.questions.sort(() => 0.5 - Math.random());
 
                 setQuestions(examQuestions);
                 setTime(examQuestions.length * 10);
