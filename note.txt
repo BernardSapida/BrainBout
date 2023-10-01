@@ -10,6 +10,7 @@ useMemo
 
 
 NEXT_PUBLIC_URL=https://brainbout.vercel.app
+VERCEL_URL=https://brainbout.vercel.app
 
 KINDE_SITE_URL=https://brainbout.vercel.app
 KINDE_POST_LOGOUT_REDIRECT_URL=https://brainbout.vercel.app
