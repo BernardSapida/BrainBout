@@ -2,7 +2,7 @@
 
 import Wrapper from '@/components/Wrapper';
 import { progressBarColor, secondsToMinutesAndSeconds, timeProgress } from '@/lib/utils';
-import { FunctionComponent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { FunctionComponent, useCallback, useEffect, useRef, useState } from 'react';
 import { Divider, Progress, Button, Chip, Spinner } from "@nextui-org/react";
 import MultipleChoice from '@/components/exam/MultipleChoice';
 import Identification from '@/components/exam/Identification';
@@ -52,7 +52,7 @@ const Page: FunctionComponent<PageProps> = () => {
         }
     }
 
-    const handleSubmit = useCallback(() => {
+    const handleSubmit = () => {
         if (!examTimeout) setExamTimeout(true);
 
         calculateScore();
@@ -61,7 +61,7 @@ const Page: FunctionComponent<PageProps> = () => {
         if (subject) {
             updateExamScore(subject, score.current);
         }
-    }, []);
+    }
 
     const nextQuestion = () => {
         if (questionNumber < questions.length) {
@@ -113,7 +113,7 @@ const Page: FunctionComponent<PageProps> = () => {
         }
 
         return () => clearInterval(timer!);
-    }, [time, examTimeout, handleSubmit]);
+    }, [time, examTimeout]);
 
     if (questions.length === 0 || answers.length === 0) {
         return (

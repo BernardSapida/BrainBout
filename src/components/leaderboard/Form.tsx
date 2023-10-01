@@ -93,7 +93,7 @@ const Form: FunctionComponent<FormProps> = () => {
                                 <SelectItem
                                     key={subject.subjectCode}
                                     value={subject.subjectCode}
-                                    textValue={`${subject.subjectCode} ${subject.name}`}
+                                    textValue={`${subject.subjectCode} ${subject.subjectCode && '-'} ${subject.name}`}
                                 >
                                     {subject.subjectCode != '' ? `${subject.subjectCode} - ${subject.name}` : subject.name}
                                 </SelectItem>
