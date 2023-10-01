@@ -2,7 +2,7 @@
 
 import Wrapper from '@/components/Wrapper';
 import { progressBarColor, secondsToMinutesAndSeconds, timeProgress } from '@/lib/utils';
-import { FunctionComponent, useEffect, useRef, useState } from 'react';
+import { FunctionComponent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Divider, Progress, Button, Chip, Spinner } from "@nextui-org/react";
 import MultipleChoice from '@/components/exam/MultipleChoice';
 import Identification from '@/components/exam/Identification';
@@ -22,17 +22,6 @@ const Page: FunctionComponent<PageProps> = () => {
     const router = useRouter();
     const searchParams = useSearchParams();
     const subject = searchParams.get('subject');
-
-    const handleSubmit = async () => {
-        if (!examTimeout) setExamTimeout(true);
-
-        calculateScore();
-
-        // Update user score for this exam
-        if (subject) {
-            updateExamScore(subject, score.current);
-        }
-    }
 
     const redirectToLeaderboard = () => {
         router.push(`/leaderboard?subject=${subject}`);
@@ -62,6 +51,17 @@ const Page: FunctionComponent<PageProps> = () => {
             overallScore.current++;
         }
     }
+
+    const handleSubmit = useCallback(() => {
+        if (!examTimeout) setExamTimeout(true);
+
+        calculateScore();
+
+        // Update user score for this exam
+        if (subject) {
+            updateExamScore(subject, score.current);
+        }
+    }, []);
 
     const nextQuestion = () => {
         if (questionNumber < questions.length) {
