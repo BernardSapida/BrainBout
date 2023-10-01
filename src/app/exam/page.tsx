@@ -82,7 +82,7 @@ const Page: FunctionComponent<PageProps> = () => {
     useEffect(() => {
         if (subject) {
             getExam(subject).then((exam) => {
-                const examQuestions = exam.data.questions;
+                const examQuestions = exam.data.questions.sort(() => 0.5 - Math.random());
 
                 setQuestions(examQuestions);
                 setTime(examQuestions.length * 10);
