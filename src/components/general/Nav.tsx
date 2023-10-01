@@ -4,6 +4,8 @@ import { FunctionComponent, ReactNode } from 'react';
 
 import { KindeUser } from '@kinde-oss/kinde-auth-nextjs/server';
 
+import { FaBrain } from 'react-icons/fa';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -59,18 +61,23 @@ const Nav: FunctionComponent<NavProps> =
                     ],
                 }}
             >
-                <NavbarBrand>
-                    <p className="font-bold text-inherit">BrainBout</p>
-                </NavbarBrand>
+                <Link href='/'>
+                    <NavbarBrand>
+                        <FaBrain className='inline mr-2' />
+                        <p className="hidden sm:block font-bold text-inherit">BrainBout</p>
+                    </NavbarBrand>
+                </Link>
+
                 {
                     isAuthenticated && (
                         <>
-                            <NavbarContent className="hidden sm:flex gap-4" justify="center">
+                            <NavbarContent className="sm:flex gap-4" justify="center">
                                 {
                                     authenticatedMenus.map((menu) => (
                                         <NavbarItem
                                             key={menu.name}
                                             isActive={menu.isActive()}
+                                            className='text-sm sm:text-base'
                                         >
                                             <Link
                                                 color={menu.isActive() ? undefined : "foreground"}

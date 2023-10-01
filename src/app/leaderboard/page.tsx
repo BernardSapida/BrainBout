@@ -14,7 +14,7 @@ interface PageProps { }
 
 const Page: FunctionComponent<PageProps> = () => {
   const searchParams = useSearchParams();
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
   const [data, setData] = useState<Leaderboard[]>();
   const subject = searchParams.get('subject');
 
@@ -22,10 +22,14 @@ const Page: FunctionComponent<PageProps> = () => {
     setLoading(true);
 
     if (subject) {
-      getLeaderboard(subject).then((leaderboard) => setData(leaderboard.data));
+      getLeaderboard(subject)
+        .then((leaderboard) => {
+          setData(leaderboard.data);
+        })
+        .finally(() => {
+          setLoading(false)
+        });
     }
-
-    setLoading(false);
   }, [subject]);
 
   return (
@@ -33,7 +37,10 @@ const Page: FunctionComponent<PageProps> = () => {
       <Form />
       {
         searchParams.get('subject') && (
-          <Table removeWrapper className='mt-5 max-w-md mx-auto w-full' aria-label="Leaderboard table">
+          <Table
+            className='mt-5 max-w-md mx-auto w-full'
+            aria-label="Leaderboard table"
+          >
             <TableHeader>
               <TableColumn>Rank</TableColumn>
               <TableColumn>User</TableColumn>
@@ -53,10 +60,10 @@ const Page: FunctionComponent<PageProps> = () => {
                     </TableCell>
                     <TableCell>
                       <User
-                        name={`${user.User.given_name} ${user.User.family_name}`}
+                        name={`${user.User?.given_name} ${user.User.family_name || ''}`}
                         description={user.User.email}
                         avatarProps={{
-                          src: `${user.User.picture}`
+                          src: `${user.User.picture || 'https://res.cloudinary.com/dwwdihklx/image/upload/v1695957223/display-pictures/t77vrr2xn7pdz5vukzjk.jpg'}`
                         }}
                       />
                     </TableCell>
