@@ -109,6 +109,7 @@ const Form: FunctionComponent<FormProps> = () => {
                         <Button
                             type='submit'
                             color='primary'
+                            size='lg'
                             onClick={() => setIsSubmitted(true)}
                         >
                             Start exam
