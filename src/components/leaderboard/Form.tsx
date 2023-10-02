@@ -81,7 +81,7 @@ const Form: FunctionComponent<FormProps> = () => {
                             label='Subject'
                             variant='bordered'
                             name='subject'
-                            size='sm'
+                            size='lg'
                             color={!isSubmitted ? 'default' : (errors.subject ? 'danger' : 'success')}
                             isInvalid={errors.subject != undefined}
                             errorMessage={errors.subject}

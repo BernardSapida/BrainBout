@@ -34,6 +34,7 @@ const Page: FunctionComponent<PageProps> = () => {
 
   return (
     <main className={styles.main}>
+      <h1 className='text-center my-5'>Choose a subject</h1>
       <Form />
       {
         searchParams.get('subject') && (
