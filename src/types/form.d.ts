@@ -14,5 +14,5 @@ type Question = {
         description: string;
     }[];
     answer?: 'A' | 'B' | 'C' | 'D' | string;
-    answers?: Record<string, boolean>;
+    answers?: string[];
 };

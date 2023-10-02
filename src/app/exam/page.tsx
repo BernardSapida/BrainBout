@@ -1,6 +1,7 @@
 'use client';
 
 import Wrapper from '@/components/Wrapper';
+import Enumeration from '@/components/exam/Enumeration';
 import Identification from '@/components/exam/Identification';
 import MultipleChoice from '@/components/exam/MultipleChoice';
 import { getExam, updateExamScore } from '@/lib/data';
@@ -21,6 +22,7 @@ const Page: FunctionComponent<PageProps> = () => {
     const overallScore = useRef<number>(0);
     const router = useRouter();
     const searchParams = useSearchParams();
+    const DEFAULT_TIME_FOR_QUESTION = 20;
     const subject = searchParams.get('subject');
 
     const redirectToLeaderboard = () => {
@@ -33,18 +35,16 @@ const Page: FunctionComponent<PageProps> = () => {
             const { answer } = answers[i];
 
             if (questionType === 'enumeration') {
-                let enumerationAnswers = questionAnswers!;
+                if (questionAnswers) {
+                    answer.split(', ').forEach((answer: string) => {
+                        if (questionAnswers?.includes(answer.toLowerCase())) {
+                            score.current++;
+                        }
+                    });
 
-                answer.split(', ').forEach((answer: string) => {
-                    if (enumerationAnswers[answer.toLowerCase()]) {
-                        delete enumerationAnswers[answer];
-                        score.current++;
-                    }
-
-                });
-
-                overallScore.current += Object.keys(enumerationAnswers).length;
-                continue;
+                    overallScore.current += questionAnswers?.length;
+                    continue;
+                }
             }
 
             if (questionAnswer == answer.toLowerCase()) score.current++;
@@ -85,7 +85,7 @@ const Page: FunctionComponent<PageProps> = () => {
                 const examQuestions = exam.data.questions.sort(() => 0.5 - Math.random());
 
                 setQuestions(examQuestions);
-                setTime(examQuestions.length * 20);
+                setTime(examQuestions.length * DEFAULT_TIME_FOR_QUESTION);
                 setExamTimeout(false);
                 setAnswers(() => {
                     let defaultAnswers = [];
@@ -133,17 +133,16 @@ const Page: FunctionComponent<PageProps> = () => {
             <div className='max-w-md w-full mx-auto mt-10 rounded-lg bg-default-50 shadow-lg border-2 border-default-200'>
                 <div className='p-5'>
                     <div className='flex justify-between'>
-                        {!examTimeout && <p className='mr-auto'>Time: {secondsToMinutesAndSeconds(time)}</p>}
-                        {!examTimeout && <p>Question: {questionNumber}/{questions.length}</p>}
-                        {examTimeout && <Chip color={passedExam() ? 'success' : 'danger'} variant="flat">{passedExam() ? 'Exam passed' : 'Exam failed'}</Chip>}
+                        {!examTimeout && <p className='ml-auto'>Time: {secondsToMinutesAndSeconds(time)}</p>}
                         {examTimeout && <p>Score: {score.current}/{overallScore.current}</p>}
+                        {examTimeout && <Chip color={passedExam() ? 'success' : 'danger'} variant="flat">{passedExam() ? 'Exam passed' : 'Exam failed'}</Chip>}
                     </div>
                     {
                         !examTimeout && (
                             <Progress
                                 aria-label="Exam timer"
                                 size="md"
-                                value={timeProgress(questions.length * 10, time)}
+                                value={timeProgress(questions.length * DEFAULT_TIME_FOR_QUESTION, time)}
                                 color={progressBarColor(timeProgress(questions.length, time))}
                                 className="max-w-md mt-3"
                             />
@@ -152,6 +151,7 @@ const Page: FunctionComponent<PageProps> = () => {
                 </div>
                 <Divider />
                 <div className='p-5'>
+                    {!examTimeout && <p className='text-tiny text-default-500'>Question: {questionNumber}/{questions.length}</p>}
                     {
                         questions[questionNumber - 1].type === 'multiple-choice' && (
                             <MultipleChoice
@@ -164,8 +164,19 @@ const Page: FunctionComponent<PageProps> = () => {
                         )
                     }
                     {
-                        questions[questionNumber - 1].type !== 'multiple-choice' && (
+                        questions[questionNumber - 1].type === 'identification' && (
                             <Identification
+                                questionNumber={questionNumber}
+                                question={questions[questionNumber - 1]}
+                                answer={answers[questionNumber - 1].answer!}
+                                setAnswers={setAnswers}
+                                submitted={examTimeout}
+                            />
+                        )
+                    }
+                    {
+                        questions[questionNumber - 1].type === 'enumeration' && (
+                            <Enumeration
                                 questionNumber={questionNumber}
                                 question={questions[questionNumber - 1]}
                                 answer={answers[questionNumber - 1].answer!}

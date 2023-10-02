@@ -1,8 +1,8 @@
 import { Dispatch, FunctionComponent, SetStateAction } from 'react';
 
-import { Input } from '@nextui-org/react';
+import { Textarea } from '@nextui-org/react';
 
-interface IdentificationProps {
+interface EnumerationProps {
     questionNumber: number;
     question: Question;
     answer: string;
@@ -10,13 +10,13 @@ interface IdentificationProps {
     submitted: boolean;
 }
 
-const Identification: FunctionComponent<IdentificationProps> =
+const Enumeration: FunctionComponent<EnumerationProps> =
     ({ questionNumber, question, answer, setAnswers, submitted }) => {
         return (
             <>
                 <p>{question.question}</p>
                 <div className='my-5'>
-                    <Input
+                    <Textarea
                         label='Answer'
                         value={answer}
                         onValueChange={
@@ -32,11 +32,11 @@ const Identification: FunctionComponent<IdentificationProps> =
                     />
                     {
                         submitted &&
-                        <p className='mt-3 text-tiny'><span className='text-green-300'>Correct answer:</span> {question.answer}</p>
+                        <p className='mt-3 text-tiny'><span className='text-green-300'>Correct answer:</span> {question.answers?.join(', ')}</p>
                     }
                 </div>
             </>
         );
     }
 
-export default Identification;
+export default Enumeration;

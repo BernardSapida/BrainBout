@@ -32,8 +32,6 @@ export function getNumberWithOrdinal(n: number) {
 }
 
 export function rankChipColor(rank: number) {
-    let color: string;
-
     switch (rank) {
         case 0: return 'success';
         case 1: return 'warning';
