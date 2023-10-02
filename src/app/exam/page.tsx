@@ -151,7 +151,7 @@ const Page: FunctionComponent<PageProps> = () => {
                 </div>
                 <Divider />
                 <div className='p-5'>
-                    {!examTimeout && <p className='text-tiny text-default-500'>Question: {questionNumber}/{questions.length}</p>}
+                    <p className='text-tiny text-default-500'>Question: {questionNumber}/{questions.length}</p>
                     {
                         questions[questionNumber - 1].type === 'multiple-choice' && (
                             <MultipleChoice
