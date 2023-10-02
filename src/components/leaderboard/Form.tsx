@@ -81,7 +81,7 @@ const Form: FunctionComponent<FormProps> = () => {
                             label='Subject'
                             variant='bordered'
                             name='subject'
-                            size='sm'
+                            size='lg'
                             color={!isSubmitted ? 'default' : (errors.subject ? 'danger' : 'success')}
                             isInvalid={errors.subject != undefined}
                             errorMessage={errors.subject}
@@ -102,6 +102,7 @@ const Form: FunctionComponent<FormProps> = () => {
                         <Button
                             type='submit'
                             color='primary'
+                            size='lg'
                             onClick={() => setIsSubmitted(true)}
                         >
                             View leaderboard
