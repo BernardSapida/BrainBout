@@ -68,7 +68,7 @@ const Page: FunctionComponent<PageProps> = () => {
                         }}
                       />
                     </TableCell>
-                    <TableCell>{user.score}/41</TableCell>
+                    <TableCell>{user.score}</TableCell>
                   </TableRow>
                 )) as any
               }
