@@ -85,7 +85,7 @@ const Page: FunctionComponent<PageProps> = () => {
                 const examQuestions = exam.data.questions.sort(() => 0.5 - Math.random());
 
                 setQuestions(examQuestions);
-                setTime(examQuestions.length * 10);
+                setTime(examQuestions.length * 20);
                 setExamTimeout(false);
                 setAnswers(() => {
                     let defaultAnswers = [];
