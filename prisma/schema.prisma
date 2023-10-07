@@ -37,5 +37,4 @@ model Exams {
   id              String      @id @default(auto()) @map("_id") @db.ObjectId
   subject         String
   questions       Json[]
-  number_of_items Int
 }

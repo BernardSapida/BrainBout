@@ -1,0 +1,447 @@
+[
+  {
+    "_id": {
+      "$oid": "6518e0e2e59cd23cc26aa6f0"
+    },
+    "subject": "cosc 80b",
+    "questions": [
+      {
+        "type": "identification",
+        "question": "It controls the execution of the program.",
+        "answer": "operating system"
+      },
+      {
+        "type": "identification",
+        "question": "It depicted as interface between the application programs and hardware.",
+        "answer": "operating system"
+      },
+      {
+        "type": "enumeration",
+        "question": "Enumerate examples of operating system (6pts).",
+        "answers": [
+          "windows",
+          "mac os",
+          "linux",
+          "ios",
+          "android",
+          "symbian"
+        ]
+      },
+      {
+        "type": "identification",
+        "question": "It allows programming languages such as C++ and Java to write the instructions.",
+        "answer": "software"
+      },
+      {
+        "type": "identification",
+        "question": "Set of instructions that tells what the computer should do.",
+        "answer": "software"
+      },
+      {
+        "type": "enumeration",
+        "question": "Enumerate classes of software (2pts).",
+        "answers": [
+          "system software",
+          "application software"
+        ]
+      },
+      {
+        "type": "identification",
+        "question": "It manipulates the basic operations (ex. input and output operations).",
+        "answer": "system software"
+      },
+      {
+        "type": "identification",
+        "question": "It locates free disk space in a hard disk when files needed it.",
+        "answer": "system software"
+      },
+      {
+        "type": "identification",
+        "question": "User does not need to know these processes.",
+        "answer": "system software"
+      },
+      {
+        "type": "enumeration",
+        "question": "Enumerate examples of system software (5pts).",
+        "answers": [
+          "os",
+          "interpreters",
+          "compilers",
+          "debugger",
+          "text editor"
+        ]
+      },
+      {
+        "type": "identification",
+        "question": "It hides the ugly details of a computer operations.",
+        "answer": "system software"
+      },
+      {
+        "type": "identification",
+        "question": "With this, programmers can write programs without knowing the details.",
+        "answer": "system software"
+      },
+      {
+        "type": "identification",
+        "question": "It accomplishes the specialized tasks for users.",
+        "answer": "application software"
+      },
+      {
+        "type": "identification",
+        "question": "It is an example of productivity tools, email, photographs, and processors.",
+        "answer": "application software"
+      },
+      {
+        "type": "identification",
+        "question": "It is an example of word processor, web browser, and media players.",
+        "answer": "application software"
+      },
+      {
+        "type": "enumeration",
+        "question": "Enumerate components of a computer system (4pts).",
+        "answers": [
+          "user",
+          "application software",
+          "operating system",
+          "hardware"
+        ]
+      },
+      {
+        "type": "identification",
+        "question": "This is an example of word processing software, desktop, publishing software.",
+        "answer": "document production software"
+      },
+      {
+        "type": "identification",
+        "question": "It creates and manipulates spreadsheet electronically.",
+        "answer": "spreadsheet software"
+      },
+      {
+        "type": "identification",
+        "question": "It creates and display information in the form of slideshow.",
+        "answer": "presentation software"
+      },
+      {
+        "type": "identification",
+        "question": "It is used to store, modify, retrieve information from a storage.",
+        "answer": "database management software"
+      },
+      {
+        "type": "identification",
+        "question": "It is used for business management.",
+        "answer": "business software"
+      },
+      {
+        "type": "identification",
+        "question": "It is used to manipulate picture, sound, and video.",
+        "answer": "multimedia software"
+      },
+      {
+        "type": "identification",
+        "question": "It is used for music players, video players, and games.",
+        "answer": "entertainment software"
+      },
+      {
+        "type": "enumeration",
+        "question": "Enumerate categories of a application software (7pts).",
+        "answers": [
+          "document production software",
+          "spreadsheet software",
+          "presentation software",
+          "database management software",
+          "business software",
+          "multimedia software",
+          "entertainment software"
+        ]
+      },
+      {
+        "type": "identification",
+        "question": "Act of developing system software.",
+        "answer": "system programming"
+      },
+      {
+        "type": "identification",
+        "question": "They should have a strong knowledge of the architecture of the computer hardware they are using.",
+        "answer": "system programmers"
+      },
+      {
+        "type": "identification",
+        "question": "It can be written in machine language.",
+        "answer": "system software"
+      },
+      {
+        "type": "identification",
+        "question": "It is the natural or primitive language that the computer actually understands.",
+        "answer": "machine language"
+      },
+      {
+        "type": "identification",
+        "question": "It is a low-level language which consists of 0's and 1's and the only language a machine understands.",
+        "answer": "machine language"
+      },
+      {
+        "type": "identification",
+        "question": "It is a low-level language which consists of 0's and 1's and the only language a machine understands.",
+        "answer": "machine language"
+      },
+      {
+        "type": "identification",
+        "question": "Programs written in this are very fast and efficient, which are very important characteristics of system software.",
+        "answer": "machine language"
+      },
+      {
+        "type": "identification",
+        "question": "Programming in this language is very tedious and highly prone to errors.",
+        "answer": "machine language"
+      },
+      {
+        "type": "identification",
+        "question": "Other language that system software can also be written",
+        "answer": "assembly language"
+      },
+      {
+        "type": "identification",
+        "question": "It uses abbreviations or mnemonics in place of binary patterns.",
+        "answer": "assembly language"
+      },
+      {
+        "type": "identification",
+        "question": "They are easier to remember, thus make programming easier.",
+        "answer": "mnemonics"
+      },
+      {
+        "type": "identification",
+        "question": "It is a special translator program that translates assembly language mnemonics into machine language instructions.",
+        "answer": "assembler"
+      },
+      {
+        "type": "identification",
+        "question": "It is very popular in system software development because of its acceptable level of efficiency.",
+        "answer": "assembly language programming"
+      },
+      {
+        "type": "identification",
+        "question": "They are easier to use because it uses English-like commands.",
+        "answer": "high-level programming languages"
+      },
+      {
+        "type": "identification",
+        "question": "It is a special translator program that converts high-level language instructions into machine language.",
+        "answer": "compiler"
+      },
+      {
+        "type": "enumeration",
+        "question": "Enumerate advantages of high-level languages over assembly language. (3pts)",
+        "answers": [
+          "easier to learn and use",
+          "pre-defined functions and subroutines",
+          "not machine dependent"
+        ]
+      },
+      {
+        "type": "enumeration",
+        "question": "Enumerate advantages of assembly language over high-level languages. (3pts)",
+        "answers": [
+          "executable code is compact",
+          "not constrained with certain programming conventions",
+          "allow programmers more direct control over memory access"
+        ]
+      },
+      {
+        "type": "enumeration",
+        "question": "These system programs convert a high-level language program or assembly language program into machine language. (2pts)",
+        "answers": [
+          "assemblers",
+          "compilers"
+        ]
+      },
+      {
+        "type": "enumeration",
+        "question": "These system programs convert a high-level language program or assembly language program into machine language. (2pts)",
+        "answers": [
+          "assemblers",
+          "compilers"
+        ]
+      },
+      {
+        "type": "identification",
+        "question": "It contains instructions from files that have been produced by the compilers which can then be recompiled to machine language instructions.",
+        "answer": "intermediate language"
+      },
+      {
+        "type": "identification",
+        "question": "It reads one instruction from the source code, convert it to machine language, and then execute it before proceeding to the next instruction.",
+        "answer": "interpreters"
+      },
+      {
+        "type": "identification",
+        "question": "It is a special translator program that doesn't generate executable file.",
+        "answer": "interpreters"
+      },
+      {
+        "type": "identification",
+        "question": "It takes the entire program in one go.",
+        "answer": "compiler"
+      },
+      {
+        "type": "identification",
+        "question": "It generates an intermediate machine code.",
+        "answer": "compiler"
+      },
+      {
+        "type": "identification",
+        "question": "Best suited for the production environment.",
+        "answer": "compiler"
+      },
+      {
+        "type": "identification",
+        "question": "It is used by programming languages such as C, C++, C#, Scala, Java, etc.",
+        "answer": "compiler"
+      },
+      {
+        "type": "identification",
+        "question": "It takes a single line of code at a time.",
+        "answer": "interpreter"
+      },
+      {
+        "type": "identification",
+        "question": "It never produces any intermediate machine code.",
+        "answer": "interpreter"
+      },
+      {
+        "type": "identification",
+        "question": "Best suited for a software production environment.",
+        "answer": "interpreter"
+      },
+      {
+        "type": "identification",
+        "question": "It is used by programming languages such as Python, PHP, JavaScript, Ruby, etc.",
+        "answer": "interpreter"
+      },
+      {
+        "type": "identification",
+        "question": "System software that combines modules together with the libraries which then form a single executable program called the load module.",
+        "answer": "linker"
+      },
+      {
+        "type": "identification",
+        "question": "System program that takes the load module from secondary storage and brings it into main memory for execution, performs address binding.",
+        "answer": "loader"
+      },
+      {
+        "type": "identification",
+        "question": "The process of assigning or mapping symbolic references to actual main memory address.",
+        "answer": "address binding"
+      },
+      {
+        "type": "identification",
+        "question": "The actual main memory location is called the physical address or absolute address.",
+        "answer": "address binding"
+      },
+      {
+        "type": "identification",
+        "question": "The actual main memory location.",
+        "answer": "physical address"
+      },
+      {
+        "type": "identification",
+        "question": "Are assigned specific locations in the main memory when the program is compiled and loaded into the main memory of execution.",
+        "answer": "variables"
+      },
+      {
+        "type": "enumeration",
+        "question": "Techniques the loader may use in placing the load module in main memory. (3pts)",
+        "answers": [
+          "absolute loading",
+          "relocatable loading",
+          "dynamic runtime loading"
+        ]
+      },
+      {
+        "type": "identification",
+        "question": "The load module has actual memory addresses assigned instead of symbolic variables.",
+        "answer": "absolute loading"
+      },
+      {
+        "type": "identification",
+        "question": "The actual addresses may have been determined before or during compile time.",
+        "answer": "absolute loading"
+      },
+      {
+        "type": "identification",
+        "question": "The load module is placed into main memory without performing address binding.",
+        "answer": "absolute loading"
+      },
+      {
+        "type": "identification",
+        "question": "This method may not be a problem in a computer system with only one program running at any given time.",
+        "answer": "absolute loading"
+      },
+      {
+        "type": "identification",
+        "question": "Problems might occur in a multiprogrammed system where two or more programs may be running at the same time and sharing the same main memory space.",
+        "answer": "absolute loading"
+      },
+      {
+        "type": "identification",
+        "question": "Delays may arise if, for example, a program needs to be loaded, but the assigned memory space is occupied by another program.",
+        "answer": "absolute loading"
+      },
+      {
+        "type": "identification",
+        "question": "The programmer should assign a new memory space, then recompile it to generate a new load module.",
+        "answer": "absolute loading"
+      },
+      {
+        "type": "identification",
+        "question": "Address binding is performed right before the load module is loaded and the address assignment is based on the available main memory location at that time.",
+        "answer": "relocatable loading"
+      },
+      {
+        "type": "identification",
+        "question": "The address that will be generated is referred to as relative address.",
+        "answer": "relocatable loading"
+      },
+      {
+        "type": "identification",
+        "question": "The relative address is based on a reference point or base address.",
+        "answer": "relocatable loading"
+      },
+      {
+        "type": "identification",
+        "question": "The relative or relocatable addresses must be generated during the compile or assembly time of the load module.",
+        "answer": "relocatable loading"
+      },
+      {
+        "type": "identification",
+        "question": "All the relative addresses and information on the reference point is contained in a relocation dictionary of the load module.",
+        "answer": "relocatable loading"
+      },
+      {
+        "type": "identification",
+        "question": "This technique is used in most modern operating systems.",
+        "answer": "dynamic runtime loading"
+      },
+      {
+        "type": "identification",
+        "question": "This technique is used in most modern operating systems.",
+        "answer": "dynamic runtime loading"
+      },
+      {
+        "type": "identification",
+        "question": "The absolute address is not generated when loaded, but only when it is needed by the CPU.",
+        "answer": "dynamic runtime loading"
+      },
+      {
+        "type": "identification",
+        "question": "It places the load module in main memory, but does not convert the relative addresses to absolute addresses.",
+        "answer": "dynamic runtime loading"
+      },
+      {
+        "type": "identification",
+        "question": "Relocating a program becomes possible, even though it is executing.",
+        "answer": "dynamic runtime loading"
+      }
+    ]
+  }
+]
