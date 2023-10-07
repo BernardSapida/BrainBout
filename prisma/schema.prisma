@@ -28,6 +28,7 @@ model Leaderboards {
   id              String      @id @default(auto()) @map("_id") @db.ObjectId
   subject         String
   score           Int
+  lecture         String
 
   User            Users?      @relation(fields: [userId], references: [id])
   userId          String?     @unique
@@ -37,4 +38,5 @@ model Exams {
   id              String      @id @default(auto()) @map("_id") @db.ObjectId
   subject         String
   questions       Json[]
+  lecture         String
 }

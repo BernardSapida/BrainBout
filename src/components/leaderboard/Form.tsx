@@ -19,7 +19,8 @@ const Form: FunctionComponent<FormProps> = () => {
     const subjects: Subject[] = [
         {
             name: 'Choose a subject',
-            subjectCode: ''
+            subjectCode: '',
+            lectures: []
         },
         // {
         //     name: 'CS ELECTIVE 1',
@@ -31,7 +32,8 @@ const Form: FunctionComponent<FormProps> = () => {
         // },
         {
             name: 'Operating Systems',
-            subjectCode: 'COSC 80B'
+            subjectCode: 'COSC 80B',
+            lectures: ["Cover-to-cover", "1", "2"]
         },
         // {
         //     name: 'NETWORKS AND COMMUNICATION',
@@ -48,7 +50,7 @@ const Form: FunctionComponent<FormProps> = () => {
     ];
 
     const handleSubmit = async (
-        values: { subject: SubjectCode },
+        values: { subject: SubjectCode, lecture: string },
         { resetForm }: { resetForm: any }
     ) => {
         try {
@@ -56,8 +58,9 @@ const Form: FunctionComponent<FormProps> = () => {
             setIsSubmitted(false);
 
             let subject = values.subject.replace(' ', '').toLowerCase();
+            let lecture = values.lecture;
 
-            router.push(`/leaderboard?subject=${subject}`)
+            router.push(`/leaderboard?subject=${subject}&lecture=${lecture}`)
 
             resetForm();
             setLoading(false);
@@ -70,7 +73,7 @@ const Form: FunctionComponent<FormProps> = () => {
 
     return (
         <Formik
-            initialValues={{ subject: '' }}
+            initialValues={{ subject: '', lecture: '' }}
             validationSchema={FormSchema}
             onSubmit={handleSubmit}
         >
@@ -99,6 +102,31 @@ const Form: FunctionComponent<FormProps> = () => {
                                 </SelectItem>
                             ))}
                         </Select>
+                        {
+                            values.subject && (
+                                <Select
+                                    label='Lecture'
+                                    variant='bordered'
+                                    name='lecture'
+                                    size='lg'
+                                    color={!isSubmitted ? 'default' : (errors.lecture ? 'danger' : 'success')}
+                                    isInvalid={errors.lecture != undefined}
+                                    errorMessage={errors.lecture}
+                                    onChange={handleChange}
+                                    isDisabled={loading}
+                                >
+                                    {subjects[1].lectures.map((lecture) => (
+                                        <SelectItem
+                                            key={lecture}
+                                            value={lecture}
+                                            textValue={lecture}
+                                        >
+                                            {lecture}
+                                        </SelectItem>
+                                    ))}
+                                </Select>
+                            )
+                        }
                         <Button
                             type='submit'
                             color='primary'

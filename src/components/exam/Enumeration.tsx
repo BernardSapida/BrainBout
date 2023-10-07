@@ -1,6 +1,7 @@
 import { Dispatch, FunctionComponent, SetStateAction } from 'react';
 
-import { Textarea } from '@nextui-org/react';
+import { Chip, Textarea } from '@nextui-org/react';
+import { AiFillCheckCircle, AiFillCloseCircle } from 'react-icons/ai';
 
 interface EnumerationProps {
     questionNumber: number;
@@ -12,6 +13,44 @@ interface EnumerationProps {
 
 const Enumeration: FunctionComponent<EnumerationProps> =
     ({ questionNumber, question, answer, setAnswers, submitted }) => {
+        const getInputColor = () => {
+            const isCorrect = matchedToAnswers();
+
+            return submitted ?
+                (
+                    isCorrect ?
+                        'success' : 'danger'
+                ) :
+                'default';
+        }
+
+        const displayResult = () => {
+            const isCorrect = matchedToAnswers();
+
+            return submitted ?
+                (
+                    isCorrect ?
+                        <></> :
+                        <p className='mt-3 text-tiny'><span className='text-green-300'>Answer:</span> {question.answers?.join(', ')}</p>
+                ) :
+                <></>;
+        }
+
+        const matchedToAnswers = () => {
+            const { answers: questionAnswer } = question;
+            const userAnswer = answer.split(', ');
+
+            if (questionAnswer?.length != userAnswer.length) return false;
+
+            for (let a of questionAnswer) {
+                if (!userAnswer?.includes(a.toLowerCase())) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         return (
             <>
                 <p>{question.question}</p>
@@ -26,14 +65,11 @@ const Enumeration: FunctionComponent<EnumerationProps> =
                                     return answer;
                                 }))
                         }
-                        isReadOnly={submitted}
+                        disabled={submitted}
                         variant='bordered'
-                        color='default'
+                        color={getInputColor()}
                     />
-                    {
-                        submitted &&
-                        <p className='mt-3 text-tiny'><span className='text-green-300'>Correct answer:</span> {question.answers?.join(', ')}</p>
-                    }
+                    {submitted && displayResult()}
                 </div>
             </>
         );

@@ -17,12 +17,13 @@ const Page: FunctionComponent<PageProps> = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [data, setData] = useState<Leaderboard[]>();
   const subject = searchParams.get('subject');
+  const lecture = searchParams.get('lecture');
 
   useEffect(() => {
     setLoading(true);
 
-    if (subject) {
-      getLeaderboard(subject)
+    if (subject && lecture) {
+      getLeaderboard(subject, lecture)
         .then((leaderboard) => {
           setData(leaderboard.data);
         })
@@ -30,7 +31,7 @@ const Page: FunctionComponent<PageProps> = () => {
           setLoading(false)
         });
     }
-  }, [subject]);
+  }, [subject, lecture]);
 
   return (
     <main className={styles.main}>

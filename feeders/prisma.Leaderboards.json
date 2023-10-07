@@ -1,0 +1,56 @@
+[
+  {
+    "_id": {
+      "$oid": "6518e2753aecd79f434e6129"
+    },
+    "subject": "cosc 80b",
+    "score": 0,
+    "lecture": "1",
+    "userId": "kp_7c763871956642189684726833a98717"
+  },
+  {
+    "_id": {
+      "$oid": "651912fb4f254f840b72046f"
+    },
+    "subject": "cosc 80b",
+    "score": 46,
+    "lecture": "1",
+    "userId": "kp_eda624a0227848f1a1310c139ba5a077"
+  },
+  {
+    "_id": {
+      "$oid": "65193c4032c2bb6bf3a207ef"
+    },
+    "subject": "cosc 80b",
+    "score": 29,
+    "lecture": "1",
+    "userId": "kp_14522f4306c7487c8027abe24913b8ad"
+  },
+  {
+    "_id": {
+      "$oid": "651aa338bffff187b0e92ecb"
+    },
+    "subject": "cosc 80b",
+    "score": 29,
+    "lecture": "1",
+    "userId": "kp_e5182680ad564f0ba5be1ed22a166afc"
+  },
+  {
+    "_id": {
+      "$oid": "651acde2c2f2aa93366e5e6f"
+    },
+    "subject": "cosc 80b",
+    "score": 44,
+    "lecture": "1",
+    "userId": "kp_af1b6dfb3b824f7c8a11802174fd5c70"
+  },
+  {
+    "_id": {
+      "$oid": "651aebfaa130f0a865163f1d"
+    },
+    "subject": "cosc 80b",
+    "score": 0,
+    "lecture": "1",
+    "userId": "kp_a5559d079b434735842f6456b290acc0"
+  }
+]

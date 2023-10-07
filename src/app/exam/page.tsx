@@ -1,12 +1,10 @@
 'use client';
 
 import Wrapper from '@/components/Wrapper';
-import Enumeration from '@/components/exam/Enumeration';
-import Identification from '@/components/exam/Identification';
-import MultipleChoice from '@/components/exam/MultipleChoice';
+import Question from '@/components/exam/Question';
 import { getExam, updateExamScore } from '@/lib/data';
 import { progressBarColor, secondsToMinutesAndSeconds, timeProgress } from '@/lib/utils';
-import { Button, Chip, Divider, Progress, Spinner } from "@nextui-org/react";
+import { Chip, Divider, Progress, Spinner } from "@nextui-org/react";
 import { useRouter, useSearchParams } from 'next/navigation';
 import { FunctionComponent, useEffect, useRef, useState } from 'react';
 
@@ -15,7 +13,7 @@ interface PageProps { }
 const Page: FunctionComponent<PageProps> = () => {
     const [questions, setQuestions] = useState<Questions>([]);
     const [answers, setAnswers] = useState<{ answer: string }[]>([]);
-    const [time, setTime] = useState<number>(0);
+    const [time, setTime] = useState<number>(-1);
     const [questionNumber, setQuestionNumber] = useState<number>(1);
     const [examTimeout, setExamTimeout] = useState<boolean>(false);
     const score = useRef<number>(0);
@@ -24,6 +22,7 @@ const Page: FunctionComponent<PageProps> = () => {
     const searchParams = useSearchParams();
     const DEFAULT_TIME_FOR_QUESTION = 20;
     const subject = searchParams.get('subject');
+    const lecture = searchParams.get('lecture');
 
     const redirectToLeaderboard = () => {
         router.push(`/leaderboard?subject=${subject}`);
@@ -55,11 +54,13 @@ const Page: FunctionComponent<PageProps> = () => {
     const handleSubmit = () => {
         if (!examTimeout) setExamTimeout(true);
 
+        console.log('Submitted!')
+
         calculateScore();
 
         // Update user score for this exam
-        if (subject) {
-            updateExamScore(subject, score.current);
+        if (subject && lecture) {
+            updateExamScore(subject, lecture, score.current);
         }
     }
 
@@ -80,9 +81,9 @@ const Page: FunctionComponent<PageProps> = () => {
     }
 
     useEffect(() => {
-        if (subject) {
-            getExam(subject).then((exam) => {
-                const examQuestions = exam.data.questions.sort(() => 0.5 - Math.random());
+        if (subject && lecture) {
+            getExam(subject, lecture).then((exam) => {
+                const examQuestions = exam.questions.sort(() => 0.5 - Math.random());
 
                 setQuestions(examQuestions);
                 setTime(examQuestions.length * DEFAULT_TIME_FOR_QUESTION);
@@ -95,6 +96,8 @@ const Page: FunctionComponent<PageProps> = () => {
                     return defaultAnswers;
                 });
             })
+        } else {
+            router.replace(`/exam?subject=${subject}&lecture=${lecture}`)
         }
     }, [subject]);
 
@@ -150,91 +153,36 @@ const Page: FunctionComponent<PageProps> = () => {
                     }
                 </div>
                 <Divider />
-                <div className='p-5'>
-                    <p className='text-tiny text-default-500'>Question: {questionNumber}/{questions.length}</p>
-                    {
-                        questions[questionNumber - 1].type === 'multiple-choice' && (
-                            <MultipleChoice
-                                questionNumber={questionNumber}
-                                question={questions[questionNumber - 1]}
-                                answer={answers[questionNumber - 1].answer!}
-                                setAnswers={setAnswers}
-                                submitted={examTimeout}
-                            />
-                        )
-                    }
-                    {
-                        questions[questionNumber - 1].type === 'identification' && (
-                            <Identification
-                                questionNumber={questionNumber}
-                                question={questions[questionNumber - 1]}
-                                answer={answers[questionNumber - 1].answer!}
-                                setAnswers={setAnswers}
-                                submitted={examTimeout}
-                            />
-                        )
-                    }
-                    {
-                        questions[questionNumber - 1].type === 'enumeration' && (
-                            <Enumeration
-                                questionNumber={questionNumber}
-                                question={questions[questionNumber - 1]}
-                                answer={answers[questionNumber - 1].answer!}
-                                setAnswers={setAnswers}
-                                submitted={examTimeout}
-                            />
-                        )
-                    }
-                    <div className='flex justify-between'>
-                        {
-                            questionNumber > 1 && (
-                                <Button
-                                    variant='bordered'
-                                    color='default'
-                                    onClick={prevQuestion}
-                                >
-                                    Previous question
-                                </Button>
-                            )
-                        }
-                        {
-                            questionNumber < questions.length && (
-                                <Button
-                                    variant='shadow'
-                                    color='primary'
-                                    className='block ml-auto'
-                                    onClick={nextQuestion}
-                                >
-                                    Next question
-                                </Button>
-                            )
-                        }
-                        {
-                            questionNumber == questions.length && !examTimeout && (
-                                <Button
-                                    variant='shadow'
-                                    color='primary'
-                                    className='block ml-auto'
-                                    onClick={handleSubmit}
-                                >
-                                    Submit
-                                </Button>
-                            )
-                        }
-                        {
-                            questionNumber == questions.length && examTimeout && (
-                                <Button
-                                    variant='shadow'
-                                    color='primary'
-                                    className='block ml-auto'
-                                    onClick={redirectToLeaderboard}
-                                >
-                                    Go to leaderboard
-                                </Button>
-                            )
-                        }
-                    </div>
-                </div>
+                {
+                    examTimeout ?
+                        (
+                            questions.map((_, key) => (
+                                <Question
+                                    key={key}
+                                    questionNumber={key + 1}
+                                    questions={questions}
+                                    answers={answers}
+                                    setAnswers={setAnswers}
+                                    examTimeout={examTimeout}
+                                    redirectToLeaderboard={redirectToLeaderboard}
+                                    nextQuestion={nextQuestion}
+                                    prevQuestion={prevQuestion}
+                                    handleSubmit={handleSubmit}
+                                />
+                            ))
+                        ) :
+                        <Question
+                            questionNumber={questionNumber}
+                            questions={questions}
+                            answers={answers}
+                            setAnswers={setAnswers}
+                            examTimeout={examTimeout}
+                            redirectToLeaderboard={redirectToLeaderboard}
+                            nextQuestion={nextQuestion}
+                            prevQuestion={prevQuestion}
+                            handleSubmit={handleSubmit}
+                        />
+                }
             </div>
         </Wrapper>
     );

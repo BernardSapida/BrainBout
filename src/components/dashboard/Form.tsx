@@ -18,7 +18,8 @@ const Form: FunctionComponent<FormProps> = () => {
     const subjects: Subject[] = [
         {
             name: 'Choose a subject',
-            subjectCode: ''
+            subjectCode: '',
+            lectures: []
         },
         // {
         //     name: 'CS ELECTIVE 1',
@@ -30,7 +31,8 @@ const Form: FunctionComponent<FormProps> = () => {
         // },
         {
             name: 'Operating Systems',
-            subjectCode: 'COSC 80B'
+            subjectCode: 'COSC 80B',
+            lectures: ["Cover-to-cover", "1", "2"]
         },
         // {
         //     name: 'NETWORKS AND COMMUNICATION',
@@ -48,7 +50,7 @@ const Form: FunctionComponent<FormProps> = () => {
     const router = useRouter();
 
     const handleSubmit = async (
-        values: { subject: SubjectCode },
+        values: { subject: SubjectCode, lecture: string },
         { resetForm }: { resetForm: any }
     ) => {
         try {
@@ -56,28 +58,21 @@ const Form: FunctionComponent<FormProps> = () => {
             setIsSubmitted(false);
 
             let subject = values.subject.replace(' ', '').toLowerCase();
-            router.push(`/exam?subject=${subject}`)
+            let lecture = values.lecture;
 
-            resetForm();
+            router.push(`/exam?subject=${subject}&lecture=${lecture}`)
+
             setLoading(false);
         } catch (error: any) {
             setLoading(false);
-
             const errorMessage = error.response.data.message;
-
             console.log(errorMessage);
-
-            // Alert(
-            //     'There was an error',
-            //     errorMessage + process.env.NEXT_PUBLIC_URL,
-            //     'error'
-            // );
         }
     };
 
     return (
         <Formik
-            initialValues={{ subject: '' }}
+            initialValues={{ subject: '', lecture: '' }}
             validationSchema={FormSchema}
             onSubmit={handleSubmit}
         >
@@ -94,7 +89,7 @@ const Form: FunctionComponent<FormProps> = () => {
                             errorMessage={errors.subject}
                             onChange={handleChange}
                             selectedKeys={[values.subject]}
-                            disabled={loading}
+                            isDisabled={loading}
                         >
                             {subjects.map((subject) => (
                                 <SelectItem
@@ -106,13 +101,42 @@ const Form: FunctionComponent<FormProps> = () => {
                                 </SelectItem>
                             ))}
                         </Select>
+                        {
+                            values.subject && (
+                                <Select
+                                    label='Lecture'
+                                    variant='bordered'
+                                    name='lecture'
+                                    size='lg'
+                                    color={!isSubmitted ? 'default' : (errors.lecture ? 'danger' : 'success')}
+                                    isInvalid={errors.lecture != undefined}
+                                    errorMessage={errors.lecture}
+                                    onChange={handleChange}
+                                    isDisabled={loading}
+                                >
+                                    {subjects[1].lectures.map((lecture) => (
+                                        <SelectItem
+                                            key={lecture}
+                                            value={lecture}
+                                            textValue={lecture}
+                                        >
+                                            {lecture}
+                                        </SelectItem>
+                                    ))}
+                                </Select>
+                            )
+                        }
                         <Button
                             type='submit'
                             color='primary'
-                            size='lg'
                             onClick={() => setIsSubmitted(true)}
+                            isLoading={loading}
                         >
-                            Start exam
+                            {
+                                loading ?
+                                    'Starting...' :
+                                    'Start exam'
+                            }
                         </Button>
                     </div>
                 </form>

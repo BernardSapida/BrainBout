@@ -153,7 +153,16 @@
           "multimedia software",
           "entertainment software"
         ]
-      },
+      }
+    ],
+    "lecture": "1"
+  },
+  {
+    "_id": {
+      "$oid": "6518e0e2e59cd23cc26aa6f1"
+    },
+    "subject": "cosc 80b",
+    "questions": [
       {
         "type": "identification",
         "question": "Act of developing system software.",
@@ -442,6 +451,7 @@
         "question": "Relocating a program becomes possible, even though it is executing.",
         "answer": "dynamic runtime loading"
       }
-    ]
+    ],
+    "lecture": "2"
   }
 ]
