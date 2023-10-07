@@ -33,10 +33,10 @@ const Page: FunctionComponent<PageProps> = () => {
         <div className='w-full mt-24 flex justify-center'>
             <div className='flex flex-col items-center gap-2'>
                 <Spinner />
-                <h3 className='font-semibold text-xl'>
+                <h3 className='font-semibold text-xl text-center'>
                     Setting up your account...
                 </h3>
-                <p>You will be redirected automatically.</p>
+                <p className='text-center'>You will be redirected automatically.</p>
             </div>
         </div>
     );

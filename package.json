@@ -9,9 +9,6 @@
     "lint": "next lint",
     "postinstall": "prisma generate"
   },
-  "prisma": {
-    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
-  },
   "dependencies": {
     "@kinde-oss/kinde-auth-nextjs": "^1.8.21",
     "@nextui-org/react": "^2.1.13",
