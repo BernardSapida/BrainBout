@@ -4,7 +4,7 @@ import Wrapper from '@/components/Wrapper';
 import Question from '@/components/exam/Question';
 import { getExam, updateExamScore } from '@/lib/data';
 import { progressBarColor, secondsToMinutesAndSeconds, timeProgress } from '@/lib/utils';
-import { Chip, Divider, Progress, Spinner } from "@nextui-org/react";
+import { Button, Chip, Divider, Progress, Spinner } from "@nextui-org/react";
 import { useRouter, useSearchParams } from 'next/navigation';
 import { FunctionComponent, useEffect, useRef, useState } from 'react';
 
@@ -157,18 +157,21 @@ const Page: FunctionComponent<PageProps> = () => {
                     examTimeout ?
                         (
                             questions.map((_, key) => (
-                                <Question
-                                    key={key}
-                                    questionNumber={key + 1}
-                                    questions={questions}
-                                    answers={answers}
-                                    setAnswers={setAnswers}
-                                    examTimeout={examTimeout}
-                                    redirectToLeaderboard={redirectToLeaderboard}
-                                    nextQuestion={nextQuestion}
-                                    prevQuestion={prevQuestion}
-                                    handleSubmit={handleSubmit}
-                                />
+                                <>
+                                    <Question
+                                        key={key}
+                                        questionNumber={key + 1}
+                                        questions={questions}
+                                        answers={answers}
+                                        setAnswers={setAnswers}
+                                        examTimeout={examTimeout}
+                                        redirectToLeaderboard={redirectToLeaderboard}
+                                        nextQuestion={nextQuestion}
+                                        prevQuestion={prevQuestion}
+                                        handleSubmit={handleSubmit}
+                                    />
+                                    <Divider />
+                                </>
                             ))
                         ) :
                         <Question
@@ -182,6 +185,18 @@ const Page: FunctionComponent<PageProps> = () => {
                             prevQuestion={prevQuestion}
                             handleSubmit={handleSubmit}
                         />
+                }
+                {
+                    questionNumber == questions.length && examTimeout && (
+                        <Button
+                            variant='shadow'
+                            color='primary'
+                            className='block ml-auto my-3 mr-3'
+                            onClick={redirectToLeaderboard}
+                        >
+                            Go to leaderboard
+                        </Button>
+                    )
                 }
             </div>
         </Wrapper>

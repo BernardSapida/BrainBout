@@ -1,4 +1,4 @@
-import { Button, Divider } from '@nextui-org/react';
+import { Button } from '@nextui-org/react';
 import { Dispatch, FunctionComponent, SetStateAction } from 'react';
 import Identification from './Identification';
 import Enumeration from './Enumeration';
@@ -26,10 +26,9 @@ const Question: FunctionComponent<QuestionProps> = ({
     nextQuestion,
     prevQuestion,
     handleSubmit,
-    redirectToLeaderboard
 }) => {
     return (
-        <div className='m-5'>
+        <div className='p-5'>
             <p className='text-tiny text-default-500'>Question: {questionNumber}/{questions.length}</p>
             {
                 questions[questionNumber - 1].type === 'identification' && (
@@ -53,56 +52,48 @@ const Question: FunctionComponent<QuestionProps> = ({
                     />
                 )
             }
-            <Divider />
-            <div className='flex justify-between mt-5'>
-                {
-                    !examTimeout && questionNumber > 1 && (
-                        <Button
-                            variant='bordered'
-                            color='default'
-                            onClick={prevQuestion}
-                        >
-                            Previous question
-                        </Button>
-                    )
-                }
-                {
-                    !examTimeout && questionNumber < questions.length && (
-                        <Button
-                            variant='shadow'
-                            color='primary'
-                            className='block ml-auto'
-                            onClick={nextQuestion}
-                        >
-                            Next question
-                        </Button>
-                    )
-                }
-                {
-                    questionNumber == questions.length && !examTimeout && (
-                        <Button
-                            variant='shadow'
-                            color='primary'
-                            className='block ml-auto'
-                            onClick={handleSubmit}
-                        >
-                            Submit
-                        </Button>
-                    )
-                }
-                {
-                    questionNumber == questions.length && examTimeout && (
-                        <Button
-                            variant='shadow'
-                            color='primary'
-                            className='block ml-auto'
-                            onClick={redirectToLeaderboard}
-                        >
-                            Go to leaderboard
-                        </Button>
-                    )
-                }
-            </div>
+            {
+                !examTimeout && (
+                    <div className='flex justify-between my-5'>
+                        {
+                            questionNumber > 1 && (
+                                <Button
+                                    variant='bordered'
+                                    color='default'
+                                    onClick={prevQuestion}
+                                >
+                                    Previous question
+                                </Button>
+                            )
+                        }
+                        {
+                            questionNumber < questions.length && (
+                                <Button
+                                    variant='shadow'
+                                    color='primary'
+                                    className='block ml-auto'
+                                    onClick={nextQuestion}
+                                >
+                                    Next question
+                                </Button>
+                            )
+                        }
+                        {
+                            questionNumber == questions.length && (
+                                <Button
+                                    variant='shadow'
+                                    color='primary'
+                                    className='block ml-auto'
+                                    onClick={handleSubmit}
+                                >
+                                    Submit
+                                </Button>
+                            )
+                        }
+                    </div>
+                )
+            }
+
         </div>
     );
 }

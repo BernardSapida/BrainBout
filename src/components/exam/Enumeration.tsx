@@ -54,7 +54,7 @@ const Enumeration: FunctionComponent<EnumerationProps> =
         return (
             <>
                 <p>{question.question}</p>
-                <div className='my-5'>
+                <div className='mt-5'>
                     <Textarea
                         label='Answer'
                         value={answer}
