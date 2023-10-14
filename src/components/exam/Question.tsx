@@ -54,7 +54,7 @@ const Question: FunctionComponent<QuestionProps> = ({
             }
             {
                 !examTimeout && (
-                    <div className='flex justify-between my-5'>
+                    <div className='flex justify-between mt-4'>
                         {
                             questionNumber > 1 && (
                                 <Button

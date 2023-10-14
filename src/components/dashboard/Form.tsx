@@ -1,6 +1,6 @@
 'use client'
 
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent, useRef, useState } from 'react';
 
 import { Select, SelectItem, Button } from '@nextui-org/react';
 
@@ -31,7 +31,7 @@ const Form: FunctionComponent<FormProps> = () => {
         //     subjectCode: 'COSC 75A'
         // },
         {
-            name: 'Operating Systems',
+            name: 'OPERATING SYSTEM',
             subjectCode: 'COSC 80B',
             lectures: ["Cover-to-cover", "1", "2"]
         },
@@ -50,6 +50,14 @@ const Form: FunctionComponent<FormProps> = () => {
         // },
     ];
     const router = useRouter();
+
+    const getSubjectIndex = (subjectCode: string) => {
+        for (let i = 0; i < subjects.length; i++) {
+            if (subjects[i].subjectCode == subjectCode) return i;
+        }
+
+        return -1;
+    }
 
     const handleSubmit = async (
         values: { subject: SubjectCode, lecture: string },
@@ -116,7 +124,7 @@ const Form: FunctionComponent<FormProps> = () => {
                                     onChange={handleChange}
                                     isDisabled={loading}
                                 >
-                                    {subjects[1].lectures.map((lecture) => (
+                                    {subjects[getSubjectIndex(values.subject)].lectures.map((lecture) => (
                                         <SelectItem
                                             key={lecture}
                                             value={lecture}

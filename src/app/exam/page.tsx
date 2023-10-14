@@ -20,7 +20,7 @@ const Page: FunctionComponent<PageProps> = () => {
     const overallScore = useRef<number>(0);
     const router = useRouter();
     const searchParams = useSearchParams();
-    const DEFAULT_TIME_FOR_QUESTION = 20;
+    const DEFAULT_TIME_FOR_QUESTION = 30;
     const subject = searchParams.get('subject');
     const lecture = searchParams.get('lecture');
 
