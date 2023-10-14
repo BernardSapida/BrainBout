@@ -17,7 +17,7 @@
       },
       {
         "type": "enumeration",
-        "question": "Enumerate examples of operating system (6pts).",
+        "question": "Enumerate 6 examples of operating system (6pts).",
         "answers": [
           "windows",
           "mac os",
@@ -39,7 +39,7 @@
       },
       {
         "type": "enumeration",
-        "question": "Enumerate classes of software (2pts).",
+        "question": "Enumerate 2 classes of software (2pts).",
         "answers": [
           "system software",
           "application software"
@@ -62,7 +62,7 @@
       },
       {
         "type": "enumeration",
-        "question": "Enumerate examples of system software (5pts).",
+        "question": "Enumerate 5 examples of system software (5pts).",
         "answers": [
           "os",
           "interpreters",
@@ -98,7 +98,7 @@
       },
       {
         "type": "enumeration",
-        "question": "Enumerate components of a computer system (4pts).",
+        "question": "Enumerate 4 components of a computer system (4pts).",
         "answers": [
           "user",
           "application software",
@@ -143,7 +143,7 @@
       },
       {
         "type": "enumeration",
-        "question": "Enumerate categories of a application software (7pts).",
+        "question": "Enumerate 7 categories of a application software (7pts).",
         "answers": [
           "document production software",
           "spreadsheet software",
@@ -240,7 +240,7 @@
       },
       {
         "type": "enumeration",
-        "question": "Enumerate advantages of high-level languages over assembly language. (3pts)",
+        "question": "Enumerate 3 advantages of high-level languages over assembly language. (3pts)",
         "answers": [
           "easier to learn and use",
           "pre-defined functions and subroutines",
@@ -249,7 +249,7 @@
       },
       {
         "type": "enumeration",
-        "question": "Enumerate advantages of assembly language over high-level languages. (3pts)",
+        "question": "Enumerate 3 advantages of assembly language over high-level languages. (3pts)",
         "answers": [
           "executable code is compact",
           "not constrained with certain programming conventions",
@@ -258,7 +258,7 @@
       },
       {
         "type": "enumeration",
-        "question": "These system programs convert a high-level language program or assembly language program into machine language. (2pts)",
+        "question": "Enumerate 2 system programs convert a high-level language program or assembly language program into machine language. (2pts)",
         "answers": [
           "assemblers",
           "compilers"
@@ -266,7 +266,7 @@
       },
       {
         "type": "enumeration",
-        "question": "These system programs convert a high-level language program or assembly language program into machine language. (2pts)",
+        "question": "Enumerate 2 system programs convert a high-level language program or assembly language program into machine language. (2pts)",
         "answers": [
           "assemblers",
           "compilers"
@@ -359,7 +359,7 @@
       },
       {
         "type": "enumeration",
-        "question": "Techniques the loader may use in placing the load module in main memory. (3pts)",
+        "question": "Enumerate 3 techniques the loader may use in placing the load module in main memory. (3pts)",
         "answers": [
           "absolute loading",
           "relocatable loading",
@@ -453,5 +453,544 @@
       }
     ],
     "lecture": "2"
+  },
+  {
+    "_id": {
+      "$oid": "6518e0e2e59cd23cc26aa6f2"
+    },
+    "subject": "dcit 26",
+    "questions": [
+      {
+        "type": "identification",
+        "question": "Is the process of planning, designing, creating, testing, and deploying a software application to perform various business operations.",
+        "answer": "application development"
+      },
+      {
+        "type": "identification",
+        "question": "It can be done by massive organizations with large teams working on projects or by a single freelance developer.",
+        "answer": "application development"
+      },
+      {
+        "type": "identification",
+        "question": "It defines the process of how the application is made and generally follows a standard methodology.",
+        "answer": "application development"
+      },
+      {
+        "type": "enumeration",
+        "question": "Enumerate the 6 factors that affects Application Development (6pts).",
+        "answers": [
+          "size of the project",
+          "determine the specific requirements",
+          "clients capability on how to change things",
+          "size of the development team",
+          "experience of the development team",
+          "the deadline for the project"
+        ]
+      },
+      {
+        "type": "enumeration",
+        "question": "Enumerate the 4 benefits of Developing Applications (4pts).",
+        "answers": [
+          "improved customer engagement",
+          "enhanced branding",
+          "high efficiency",
+          "data collection and analysis"
+        ]
+      },
+      {
+        "type": "enumeration",
+        "question": "Enumerate the 5 main steps in application development (5pts).",
+        "answers": [
+          "planning and research",
+          "design and prototyping",
+          "code development",
+          "testing and optimization",
+          "release and maintenance"
+        ]
+      },
+      {
+        "type": "identification",
+        "question": "The app's purpose must be clearly laid out to all parties in the planning stage.",
+        "answer": "planning and research"
+      },
+      {
+        "type": "identification",
+        "question": "Developers research hardware and software requirements, marketers study feasibility and demand on the market, and business teams analyze competition and opportunities for growth, among other things.",
+        "answer": "planning and research"
+      },
+      {
+        "type": "identification",
+        "question": "Developers define a design to satisfy the requirements.",
+        "answer": "design and prototyping"
+      },
+      {
+        "type": "identification",
+        "question": "They usually start on paper with draft sketches.",
+        "answer": "design and prototyping"
+      },
+      {
+        "type": "identification",
+        "question": "They can then create wireframes to visualize the app's structure better and create a prototype to identify potential problems.",
+        "answer": "design and prototyping"
+      },
+      {
+        "type": "identification",
+        "question": "Developers now write the code the app needs to function as intended based on the iterations and initial testing.",
+        "answer": "code development"
+      },
+      {
+        "type": "identification",
+        "question": "This stage has two types of development. The front-end development that includes UX and UI and backend development which is the server side.",
+        "answer": "code development"
+      },
+      {
+        "type": "identification",
+        "question": "The app undergoes formal testing with users to verify the functions and usability of the app and identify user difficulties that may have been overlooked during prototyping.",
+        "answer": "testing and optimization"
+      },
+      {
+        "type": "identification",
+        "question": "Once testing is done, the app can undergo final production and be released.",
+        "answer": "release and maintenance"
+      },
+      {
+        "type": "identification",
+        "question": "After deployment, the team needs to monitor for possible bugs or other issues and respond to them quickly.",
+        "answer": "release and maintenance"
+      },
+      {
+        "type": "identification",
+        "question": "Changes and enhancements to the app can be done after release, but they must undergo strict testing and control to measure their effectiveness.",
+        "answer": "release and maintenance"
+      }
+    ],
+    "lecture": "1"
+  },
+  {
+    "_id": {
+      "$oid": "6518e0e2e59cd23cc26aa6f3"
+    },
+    "subject": "dcit 26",
+    "questions": [
+      {
+        "type": "enumeration",
+        "question": "Enumerate the 6 types of application development (6pts).",
+        "answers": [
+          "rapid app development",
+          "custom app development",
+          "database app development",
+          "enterprise app development",
+          "web app development",
+          "citizen app development"
+        ]
+      },
+      {
+        "type": "identification",
+        "question": "It is a more flexible method of app development that focuses on speeding up the development process without compromising quality.",
+        "answer": "rapid application development"
+      },
+      {
+        "type": "identification",
+        "question": "In this approach, developers can accelerate their feedback, make multiple iterations, and roll out updates without starting from scratch every time.",
+        "answer": "rapid application development"
+      },
+      {
+        "type": "identification",
+        "question": "It is a tailored method of designing and deploying applications for specific users to fulfill business requirements.",
+        "answer": "custom application development"
+      },
+      {
+        "type": "identification",
+        "question": "This has a narrow focus and is opted for by organizations looking to address a particular need or objective.",
+        "answer": "custom application development"
+      },
+      {
+        "type": "identification",
+        "question": "This approach offers functionalities that an off-the-shelf solution doesn't and allows developers to create and deploy apps by precisely replicating the idea conceived.",
+        "answer": "custom application development"
+      },
+      {
+        "type": "identification",
+        "question": "This approach primary focuses in entering, centrally storing, and retrieving information.",
+        "answer": "database application development"
+      },
+      {
+        "type": "identification",
+        "question": "Managing data accumulated from multiple sources becomes time-consuming and tedious as businesses expand.",
+        "answer": "database application development"
+      },
+      {
+        "type": "identification",
+        "question": "It is a collaborative method of building customized applications for large enterprises to meet their complex business needs.",
+        "answer": "enterprise application development"
+      },
+      {
+        "type": "identification",
+        "question": "This approach helps automate specific functionalities and processes, allowing users to perform their tasks quickly.",
+        "answer": "enterprise application development"
+      },
+      {
+        "type": "identification",
+        "question": "These are websites that function like mobile apps. Users don't need to download a separate app, just a web browser.",
+        "answer": "web application development"
+      },
+      {
+        "type": "identification",
+        "question": "It is the cheapest and easiest to develop.",
+        "answer": "web application development"
+      },
+      {
+        "type": "identification",
+        "question": "Its downside is that they are also the worst in UX, as they tend to be slower, have less intuitive UI design, and interact less with other device features.",
+        "answer": "web application development"
+      },
+      {
+        "type": "identification",
+        "question": "Citizen app development is the process of creating software applications by non-professional developers, often referred to as 'citizen developers'.",
+        "answer": "citizen application development"
+      },
+      {
+        "type": "enumeration",
+        "question": "Enumerate the 6 types of application developed for busiensses (6pts).",
+        "answers": [
+          "marketing apps",
+          "inventory apps",
+          "project management apps",
+          "expense tracking apps",
+          "collaboration apps",
+          "human resource management system apps"
+        ]
+      },
+      {
+        "type": "identification",
+        "question": "These apps help businesses improve their marketing efforts, such as social media management, email marketing, and content creation, allowing them to reach a wider audience and engage with customers more effectively.",
+        "answer": "marketing apps"
+      },
+      {
+        "type": "identification",
+        "question": "These apps help businesses manage their inventory levels and track product availability, allowing them to reduce waste, optimize their supply chain, and improve their bottom line.",
+        "answer": "inventory apps"
+      },
+      {
+        "type": "identification",
+        "question": "These apps help businesses manage and track their projects, including assigning tasks, setting deadlines, and monitoring progress.",
+        "answer": "project management apps"
+      },
+      {
+        "type": "identification",
+        "question": "These apps can help businesses track and manage expenses by allowing employees to capture and categorize expenses and enabling managers to approve and reimburse expenses.",
+        "answer": "expense tracking apps"
+      },
+      {
+        "type": "identification",
+        "question": "These apps help teams work together more effectively, allowing them to communicate, share files, and collaborate on projects in real-time.",
+        "answer": "collaboration apps"
+      },
+      {
+        "type": "identification",
+        "question": "These can be designed to automate and streamline various HR processes, including recruitment, onboarding, payroll, performance management, and employee engagement.",
+        "answer": "human resource management system apps"
+      }
+    ],
+    "lecture": "2"
+  },
+  {
+    "_id": {
+      "$oid": "6518e0e2e59cd23cc26aa6f4"
+    },
+    "subject": "cosc 101",
+    "questions": [
+      {
+        "type": "identification",
+        "question": "Is defined as any sketch or a drawing or a special network that pictorially represents some meaningful information.",
+        "answer": "graphics"
+      },
+      {
+        "type": "identification",
+        "question": "Is used where a set of image needs to be manipulated or the creation of the image in the form of pixels and is drawn on the computer.",
+        "answer": "computer graphics"
+      },
+      {
+        "type": "identification",
+        "question": "Is the part of the application where you create and modify drawing entities",
+        "answer": "graphics area"
+      },
+      {
+        "type": "enumeration",
+        "question": "Enumerate the 2 types of Computer Graphics (2pts).",
+        "answers": [
+          "raster graphics",
+          "vector graphics"
+        ]
+      },
+      {
+        "type": "identification",
+        "question": "The pixels are used for an image to be drawn. It is also known as a bitmap image in which a sequence of image is into smaller pixels. Basically a bitmap indicates a large number of pixels together.",
+        "answer": "raster graphics"
+      },
+      {
+        "type": "identification",
+        "question": "The mathematical formula are used to draw different types of shapes, lines, objects and so on.",
+        "answer": "raster graphics"
+      },
+      {
+        "type": "enumeration",
+        "question": "Enumerate the 9 types of Computer Graphics (9pts).",
+        "answers": [
+          "computer generated maps",
+          "use in biology",
+          "presentation graphics",
+          "computer art",
+          "architect",
+          "printing technology",
+          "entertainment",
+          "education and training",
+          "visualization",
+          "educational software"
+        ]
+      },
+      {
+        "type": "identification",
+        "question": "Computer-generated model of the physical, financial and economic system is often used as educational aids.",
+        "answer": "education and training"
+      },
+      {
+        "type": "identification",
+        "question": "Model of physical systems, physiological system, population trends or equipment can help trainees to understand the operation of the system.",
+        "answer": "education and training"
+      },
+      {
+        "type": "identification",
+        "question": "Molecular biologist can display a picture of molecules and gain insight into their structure with the help of computer graphics.",
+        "answer": "use in biology"
+      },
+      {
+        "type": "identification",
+        "question": "Town planners and transportation engineers can use computer-generated maps which display data useful to them in their planning work.",
+        "answer": "computer generated maps"
+      },
+      {
+        "type": "identification",
+        "question": "It can explore an alternative solution to design problems at an interactive graphics terminal. In this way, they can test many more solutions that would not be possible without the computer.",
+        "answer": "architect"
+      },
+      {
+        "type": "identification",
+        "question": "There are used in bar charts, line graphs, pie charts and other displays showing relationships between multiple parameters. It is commonly used to summarize.",
+        "answer": "presentation graphics"
+      },
+      {
+        "type": "identification",
+        "question": "They are also used in the field of commercial arts. It is used to generate television and advertising commercial.",
+        "answer": "computer art"
+      },
+      {
+        "type": "identification",
+        "question": "Computer Graphics are now commonly used in making motion pictures, music videos and television shows.",
+        "answer": "entertainment"
+      },
+      {
+        "type": "identification",
+        "question": "Used for visualization of scientists, engineers, medical personnel, business analysts for the study of a large amount of information.",
+        "answer": "visualization"
+      },
+      {
+        "type": "identification",
+        "question": "Computer Graphics is used in the development of educational software for making computer-aided instruction.",
+        "answer": "educational software"
+      },
+      {
+        "type": "enumeration",
+        "question": "Enumerate the 5 parts of Graphics Systems (5pts).",
+        "answers": [
+          "input devices",
+          "processor",
+          "memory",
+          "frame buffer",
+          "output devices"
+        ]
+      },
+      {
+        "type": "identification",
+        "question": "This is a basic object that is essential for the creation or construction of complex images.",
+        "answer": "graphics primitive"
+      },
+      {
+        "type": "identification",
+        "question": "This is a point of light. It is just one tiny dot on the raster displays. Though it has no structure, it is definitely a building block and hence it can be considered as the graphics primitive.",
+        "answer": "pixel"
+      },
+      {
+        "type": "identification",
+        "question": "It constitute the basic building block of Line graphs, bar and pie charts, two and three-dimensional graphs of mathematical functions, engineering drawings and architectural plans.",
+        "answer": "line"
+      },
+      {
+        "type": "identification",
+        "question": "This is a closed area of image bounded by straight or curved lines and filled with one solid color.",
+        "answer": "polygon"
+      },
+      {
+        "type": "identification",
+        "question": "This is a set of uncorrelated data, such as a histogram array or bivariate array. The arrays are filled event by event from a list data in order to create a display. The saved arrays usually take up far less disk space, but can the data can no longer be gated.",
+        "answer": "display file"
+      },
+      {
+        "type": "identification",
+        "question": "The video output device which drives a video display from the memory buffer containing a complete set of data.",
+        "answer": "frame buffer"
+      },
+      {
+        "type": "identification",
+        "question": "It controls the view of the image so that the user can view the Image from desired angle and desired magnification.",
+        "answer": "display control"
+      },
+      {
+        "type": "identification",
+        "question": "It read the data from the frame buffer and convert it into corresponding 1's and 0's according to there pixels and then put it on to a monitor screen.",
+        "answer": "display processor"
+      },
+      {
+        "type": "identification",
+        "question": "This work 30 times per second to maintain a steady picture on the screen, and if we want to change the picture on the screen then we have to change the contents of frame buffer.",
+        "answer": "display processor"
+      },
+      {
+        "type": "identification",
+        "question": "In mathematics and computer science an algorithm is a step by step procedure for making calculations. Algorithms are made for calculation, data processing and automatedreasoning.",
+        "answer": "line generation"
+      },
+      {
+        "type": "identification",
+        "question": "This is a program or set of programs that enables us to manipulate the visual images on computer system.",
+        "answer": "graphics software"
+      },
+      {
+        "type": "identification",
+        "question": "They are used throughout graphics as building blocks for more complicated shapes.",
+        "answer": "points"
+      },
+      {
+        "type": "identification",
+        "question": "They are used in computer graphics to compose images that are three-dimensional in appearance.",
+        "answer": "polygons"
+      },
+      {
+        "type": "identification",
+        "question": "We can insert text at any position in two- or three dimensional Mathematical graphics. The text will be given in the graphic's base style.",
+        "answer": "text primitive"
+      },
+      {
+        "type": "identification",
+        "question": "In computer graphics any object that is larger than the computer screen cannot be seen through the monitor i.e., window.",
+        "answer": "windowing and clipping"
+      },
+      {
+        "type": "identification",
+        "question": "This is a rectangular viewing region in computer graphics, or a term used for optical components.",
+        "answer": "viewport"
+      },
+      {
+        "type": "identification",
+        "question": "It is an umbrella term that encompasses the entire creative and production process for creating any kind of visual communication. This can range from a billboard or magazine, to a t-shirt, catalog, packaging, website or video.",
+        "answer": "graphic communications"
+      },
+      {
+        "type": "enumeration",
+        "question": "Enumerate the 8 major applications of Graphics Systems (8pts).",
+        "answers": [
+          "computer art",
+          "computer aided drawing",
+          "education",
+          "training",
+          "visualization",
+          "image processing",
+          "machine drawing",
+          "graphical user interface"
+        ]
+      },
+      {
+        "type": "identification",
+        "question": "Using computer graphics we can create fine and commercial art which include animation packages, paint packages. These packages provide facilities for designing object shapes and specifying object motion. Cartoon drawing, paintings, logo design can also be done.",
+        "answer": "computer art"
+      },
+      {
+        "type": "identification",
+        "question": "Designing of buildings, automobile, aircraft is done with this. It helps in providing minute details to the drawing and producing more accurate and sharp drawings with better specifications.",
+        "answer": "computer aided drawing"
+      },
+      {
+        "type": "identification",
+        "question": "Computer generated models are extremely useful for teaching huge number of concepts and fundamentals in an easy to understand and learn manner. Using computer graphics many educational models can be created through which more interest can be generated among the students regarding the subject.",
+        "answer": "education"
+      },
+      {
+        "type": "identification",
+        "question": "Specialized system for training like simulators canbe used for training the candidates in a way that can be grasped in a short span of time with better understanding. Creation of training modules using computer graphics is simple and very useful.",
+        "answer": "training"
+      },
+      {
+        "type": "identification",
+        "question": "It helps in finding insights of the data, to check and study the behavior of processes around us and we need appropriate visualization which can be achieved through proper usage of computer graphics.",
+        "answer": "visualization"
+      },
+      {
+        "type": "identification",
+        "question": "Various kinds of photographs or images require editing in order to be used in different places. Processing of existing images into refined ones for better interpretation is one of the many applications of computer graphics.",
+        "answer": "image processing"
+      },
+      {
+        "type": "identification",
+        "question": "Computer graphics is very frequently used for designing, modifying and creation of various parts of machine and the whole machine itself, the main reason behindusing computer graphics for this purpose is the precision and clarity we get from such drawing is ultimate and extremely desired for the safe manufacturing of machine using these drawings.",
+        "answer": "machine drawing"
+      },
+      {
+        "type": "identification",
+        "question": "The use of pictures, images, icons, pop-up menus, graphical objects helps in creating a user friendly environment where working is easy and pleasant, using computer graphics we can create such an atmosphere where everything can be automated and anyone can get the desired action performed in an easy fashion.",
+        "answer": "graphical user interface"
+      },
+      {
+        "type": "identification",
+        "question": "Computer graphics are used in creating cartoon animation films, video games as well as television shows.",
+        "answer": "entertainment"
+      },
+      {
+        "type": "identification",
+        "question": "Models can be created using computer graphics. These models can then be used to teach a variety of concepts and fundamentals.",
+        "answer": "education"
+      },
+      {
+        "type": "identification",
+        "question": "It is used in editing and processing images to be used in various places.",
+        "answer": "image processing"
+      },
+      {
+        "type": "identification",
+        "question": "Computer graphics are used in generating body and brain scans.",
+        "answer": "medical imaging"
+      },
+      {
+        "type": "identification",
+        "question": "It is used in creating environments where everything can be automated.",
+        "answer": "graphical interface"
+      },
+      {
+        "type": "identification",
+        "question": "It increase the richness of a visual rendering include advanced shading methods, lighting, texture mapping, translucency, and atmospheric effects.",
+        "answer": "computer graphics techniques"
+      },
+      {
+        "type": "enumeration",
+        "question": "Enumerate the 5 additional applications of Graphics Systems (5pts).",
+        "answers": [
+          "entertainment",
+          "education",
+          "image processing",
+          "medical imaging",
+          "graphical interface"
+        ]
+      }
+    ],
+    "lecture": "1"
   }
 ]

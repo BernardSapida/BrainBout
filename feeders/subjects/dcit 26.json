@@ -1,0 +1,242 @@
+[
+    {
+        "_id": {
+            "$oid": "6518e0e2e59cd23cc26aa6f2"
+        },
+        "subject": "dcit 26",
+        "questions": [
+            {
+                "type": "identification",
+                "question": "Is the process of planning, designing, creating, testing, and deploying a software application to perform various business operations.",
+                "answer": "application development"
+            },
+            {
+                "type": "identification",
+                "question": "It can be done by massive organizations with large teams working on projects or by a single freelance developer.",
+                "answer": "application development"
+            },
+            {
+                "type": "identification",
+                "question": "It defines the process of how the application is made and generally follows a standard methodology.",
+                "answer": "application development"
+            },
+            {
+                "type": "enumeration",
+                "question": "Enumerate the 6 factors that affects Application Development (6pts).",
+                "answers": [
+                    "size of the project",
+                    "determine the specific requirements",
+                    "clients capability on how to change things",
+                    "size of the development team",
+                    "experience of the development team",
+                    "the deadline for the project"
+                ]
+            },
+            {
+                "type": "enumeration",
+                "question": "Enumerate the 4 benefits of Developing Applications (4pts).",
+                "answers": [
+                    "improved customer engagement",
+                    "enhanced branding",
+                    "high efficiency",
+                    "data collection and analysis"
+                ]
+            },
+            {
+                "type": "enumeration",
+                "question": "Enumerate the 5 main steps in application development (5pts).",
+                "answers": [
+                    "planning and research",
+                    "design and prototyping",
+                    "code development",
+                    "testing and optimization",
+                    "release and maintenance"
+                ]
+            },
+            {
+                "type": "identification",
+                "question": "The app's purpose must be clearly laid out to all parties in the planning stage.",
+                "answer": "planning and research"
+            },
+            {
+                "type": "identification",
+                "question": "Developers research hardware and software requirements, marketers study feasibility and demand on the market, and business teams analyze competition and opportunities for growth, among other things.",
+                "answer": "planning and research"
+            },
+            {
+                "type": "identification",
+                "question": "Developers define a design to satisfy the requirements.",
+                "answer": "design and prototyping"
+            },
+            {
+                "type": "identification",
+                "question": "They usually start on paper with draft sketches.",
+                "answer": "design and prototyping"
+            },
+            {
+                "type": "identification",
+                "question": "They can then create wireframes to visualize the app's structure better and create a prototype to identify potential problems.",
+                "answer": "design and prototyping"
+            },
+            {
+                "type": "identification",
+                "question": "Developers now write the code the app needs to function as intended based on the iterations and initial testing.",
+                "answer": "code development"
+            },
+            {
+                "type": "identification",
+                "question": "This stage has two types of development. The front-end development that includes UX and UI and backend development which is the server side.",
+                "answer": "code development"
+            },
+            {
+                "type": "identification",
+                "question": "The app undergoes formal testing with users to verify the functions and usability of the app and identify user difficulties that may have been overlooked during prototyping.",
+                "answer": "testing and optimization"
+            },
+            {
+                "type": "identification",
+                "question": "Once testing is done, the app can undergo final production and be released.",
+                "answer": "release and maintenance"
+            },
+            {
+                "type": "identification",
+                "question": "After deployment, the team needs to monitor for possible bugs or other issues and respond to them quickly.",
+                "answer": "release and maintenance"
+            },
+            {
+                "type": "identification",
+                "question": "Changes and enhancements to the app can be done after release, but they must undergo strict testing and control to measure their effectiveness.",
+                "answer": "release and maintenance"
+            }
+        ],
+        "lecture": "1"
+    },
+    {
+        "_id": {
+            "$oid": "6518e0e2e59cd23cc26aa6f3"
+        },
+        "subject": "dcit 26",
+        "questions": [
+            {
+                "type": "enumeration",
+                "question": "Enumerate the 6 types of application development (6pts).",
+                "answers": [
+                    "rapid app development",
+                    "custom app development",
+                    "database app development",
+                    "enterprise app development",
+                    "web app development",
+                    "citizen app development"
+                ]
+            },
+            {
+                "type": "identification",
+                "question": "It is a more flexible method of app development that focuses on speeding up the development process without compromising quality.",
+                "answer": "rapid application development"
+            },
+            {
+                "type": "identification",
+                "question": "In this approach, developers can accelerate their feedback, make multiple iterations, and roll out updates without starting from scratch every time.",
+                "answer": "rapid application development"
+            },
+            {
+                "type": "identification",
+                "question": "It is a tailored method of designing and deploying applications for specific users to fulfill business requirements.",
+                "answer": "custom application development"
+            },
+            {
+                "type": "identification",
+                "question": "This has a narrow focus and is opted for by organizations looking to address a particular need or objective.",
+                "answer": "custom application development"
+            },
+            {
+                "type": "identification",
+                "question": "This approach offers functionalities that an off-the-shelf solution doesn't and allows developers to create and deploy apps by precisely replicating the idea conceived.",
+                "answer": "custom application development"
+            },
+            {
+                "type": "identification",
+                "question": "This approach primary focuses in entering, centrally storing, and retrieving information.",
+                "answer": "database application development"
+            },
+            {
+                "type": "identification",
+                "question": "Managing data accumulated from multiple sources becomes time-consuming and tedious as businesses expand.",
+                "answer": "database application development"
+            },
+            {
+                "type": "identification",
+                "question": "It is a collaborative method of building customized applications for large enterprises to meet their complex business needs.",
+                "answer": "enterprise application development"
+            },
+            {
+                "type": "identification",
+                "question": "This approach helps automate specific functionalities and processes, allowing users to perform their tasks quickly.",
+                "answer": "enterprise application development"
+            },
+            {
+                "type": "identification",
+                "question": "These are websites that function like mobile apps. Users don't need to download a separate app, just a web browser.",
+                "answer": "web application development"
+            },
+            {
+                "type": "identification",
+                "question": "It is the cheapest and easiest to develop.",
+                "answer": "web application development"
+            },
+            {
+                "type": "identification",
+                "question": "Its downside is that they are also the worst in UX, as they tend to be slower, have less intuitive UI design, and interact less with other device features.",
+                "answer": "web application development"
+            },
+            {
+                "type": "identification",
+                "question": "Citizen app development is the process of creating software applications by non-professional developers, often referred to as 'citizen developers'.",
+                "answer": "citizen application development"
+            },
+            {
+                "type": "enumeration",
+                "question": "Enumerate the 6 types of application developed for busiensses (6pts).",
+                "answers": [
+                    "marketing apps",
+                    "inventory apps",
+                    "project management apps",
+                    "expense tracking apps",
+                    "collaboration apps",
+                    "human resource management system apps"
+                ]
+            },
+            {
+                "type": "identification",
+                "question": "These apps help businesses improve their marketing efforts, such as social media management, email marketing, and content creation, allowing them to reach a wider audience and engage with customers more effectively.",
+                "answer": "marketing apps"
+            },
+            {
+                "type": "identification",
+                "question": "These apps help businesses manage their inventory levels and track product availability, allowing them to reduce waste, optimize their supply chain, and improve their bottom line.",
+                "answer": "inventory apps"
+            },
+            {
+                "type": "identification",
+                "question": "These apps help businesses manage and track their projects, including assigning tasks, setting deadlines, and monitoring progress.",
+                "answer": "project management apps"
+            },
+            {
+                "type": "identification",
+                "question": "These apps can help businesses track and manage expenses by allowing employees to capture and categorize expenses and enabling managers to approve and reimburse expenses.",
+                "answer": "expense tracking apps"
+            },
+            {
+                "type": "identification",
+                "question": "These apps help teams work together more effectively, allowing them to communicate, share files, and collaborate on projects in real-time.",
+                "answer": "collaboration apps"
+            },
+            {
+                "type": "identification",
+                "question": "These can be designed to automate and streamline various HR processes, including recruitment, onboarding, payroll, performance management, and employee engagement.",
+                "answer": "human resource management system apps"
+            }
+        ],
+        "lecture": "2"
+    }
+]

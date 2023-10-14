@@ -21,10 +21,11 @@ const Form: FunctionComponent<FormProps> = () => {
             subjectCode: '',
             lectures: []
         },
-        // {
-        //     name: 'CS ELECTIVE 1',
-        //     subjectCode: 'COSC 101'
-        // },
+        {
+            name: 'CS ELECTIVE 1',
+            subjectCode: 'COSC 101',
+            lectures: ["Cover-to-cover", "1"]
+        },
         // {
         //     name: 'SOFTWARE ENGINEERING II',
         //     subjectCode: 'COSC 75A'
@@ -38,10 +39,11 @@ const Form: FunctionComponent<FormProps> = () => {
         //     name: 'NETWORKS AND COMMUNICATION',
         //     subjectCode: 'COSC 85B'
         // },
-        // {
-        //     name: 'APPLICATION DEVELOPMENT AND EMERGING TECHNOLOGIES',
-        //     subjectCode: 'DCIT 26'
-        // },
+        {
+            name: 'APPLICATION DEVELOPMENT AND EMERGING TECHNOLOGIES',
+            subjectCode: 'DCIT 26',
+            lectures: ["Cover-to-cover", "1", "2"]
+        },
         // {
         //     name: 'SOCIAL AND PROFESSIONAL ISSUES',
         //     subjectCode: 'DCIT 65A'
